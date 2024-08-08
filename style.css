@@ -55,7 +55,31 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
+    animation:slidedownX 1s ease-in-out forwards ;
+
+
 }
+
+    @keyframes slidedownY{
+        0%{
+            opacity: 0;
+            transform: translateY(-60px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes slidedownX{
+        0%{
+            opacity: 0;
+            transform: translateX(-60px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 
 
 .bridal-lash-wrapper>nav>li>a {
