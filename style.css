@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+
+body {
+    background-color: #2f2325;
+    font-family: "Merriweather Sans", sans-serif;
+    font-style: normal;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bridal-lash {
+    padding: 15px 0px;
+}
+
+
+.bridal-lash-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bridal-lash-wrapper>span {
+    font-size: 35px;
+    font-weight: bold;
+    color: #f9c352;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    height: 45px;
+    border-bottom: 4px solid #f9c352;
+}
+
+.bridal-lash-wrapper>nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.bridal-lash-wrapper>nav>li>a {
+    color: #ffffff;
+    letter-spacing: 1px;
+   transition: color  0.3s ease ,transform 0.3s ease;
+}
+
+
+.bridal-lash-wrapper>nav>li>a:hover {
+    color: #f9c352;
+    transform: scale(1.1)
+}
+
+
+.bridal-lash-wrapper>div {
+    display: none;
+}
