@@ -34,6 +34,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    padding: 0 15px;
+
 }
 
 .bridal-lash-wrapper>span {
@@ -43,7 +46,10 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     height: 45px;
     border-bottom: 4px solid #f9c352;
+    animation:slidedownY 1s ease-in-out forwards ;
+
 }
+   
 
 .bridal-lash-wrapper>nav {
     display: flex;
@@ -51,19 +57,49 @@ body {
     gap: 20px;
 }
 
+
 .bridal-lash-wrapper>nav>li>a {
     color: #ffffff;
     letter-spacing: 1px;
-   transition: color  0.3s ease ,transform 0.3s ease;
 }
 
 
 .bridal-lash-wrapper>nav>li>a:hover {
     color: #f9c352;
-    transform: scale(1.1)
 }
 
 
 .bridal-lash-wrapper>div {
     display: none;
+    
+}
+
+
+
+@media screen and (max-width:1000px){
+   
+
+
+
+    .bridal-lash-wrapper>nav {
+        position: absolute;
+        flex-direction: column;
+        top: 50px;
+        left: -60%;
+        width: 50%;
+        align-items: start;
+        background-color: #2f2325;
+        height: 100vh;
+        padding-left: 20px;
+        padding-top: 20px;
+        gap: 40px;
+    }
+
+    .bridal-lash-wrapper>div {
+        display: flex;
+        animation:slidedownY 1s ease-in-out forwards ;
+
+    }
+
+
 }
