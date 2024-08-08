@@ -87,7 +87,10 @@ body {
     letter-spacing: 1px;
 }
 
+.bridal-lash-wrapper>nav>li:nth-child(1)>a:nth-child(1){
+    color: #f9c352;
 
+}
 .bridal-lash-wrapper>nav>li>a:hover {
     color: #f9c352;
 }
