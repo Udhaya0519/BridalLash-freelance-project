@@ -25,6 +25,9 @@ body {
     margin: 0 auto;
 }
 
+
+/* header starts */
+
 .bridal-lash {
     padding: 15px 0px;
 }
@@ -60,26 +63,7 @@ body {
 
 }
 
-    @keyframes slidedownY{
-        0%{
-            opacity: 0;
-            transform: translateY(-60px);
-        }
-        100%{
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    @keyframes slidedownX{
-        0%{
-            opacity: 0;
-            transform: translateX(-60px);
-        }
-        100%{
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
+    
 
 
 .bridal-lash-wrapper>nav>li>a {
@@ -103,6 +87,147 @@ body {
 
 
 
+/* header ends */
+
+
+
+
+
+/* packages starts */
+
+
+
+.packages{
+    margin: 40px 0;
+    padding: 0 15px;
+
+}
+.packages>.container>h1{
+    color: #f9c352;
+    margin-bottom: 40px;
+    animation:slidedownY 1s ease-in-out forwards ;
+
+}
+.packages-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.packages-wrapper>div{
+    
+    width: 30%;
+    background-color: #4D3B3B;
+    border: 3px solid #4D3B3B;
+    border-radius: 5px;
+    padding: 10px;
+    animation:slidedownY 1s ease-in-out forwards ;
+
+}
+
+.packages-wrapper>div>div:nth-child(1)>img{
+    border-radius: 10px;
+}
+.packages-wrapper>div>h3{
+    color: #fff;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    font-weight: 300;
+    height: 46px;
+}
+.packages-wrapper>div>div:nth-child(3){
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.packages-wrapper>div>div:nth-child(3)>span{
+    color: #f9c352;
+    margin: 15px 0;
+    font-size: 20px;
+    font-weight: 300;
+}
+.packages-wrapper>div>button{
+    color: #fff;
+    background-color: #F9C352;
+    font-size: 18px;
+    font-weight: 300;
+    text-shadow: 0 0 20px #000;
+    letter-spacing: 1px;
+    padding: 8px 25px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+
+
+    position: relative;
+    overflow: hidden;
+    transition: color 0.7s ease;
+    
+
+}
+
+.packages-wrapper>div>button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #D48A25; /* Color filling */
+    transition: width 0.7s ease;
+    z-index: 1;
+}
+.packages-wrapper>div>button:hover::before {
+    width: 100%;
+
+
+}
+
+
+.packages-wrapper>div>button>span {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* packages ends */
+
+
+
+
+
+@keyframes slidedownY{
+    0%{
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slidedownX{
+    0%{
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
 @media screen and (max-width:1000px){
    
 
@@ -120,6 +245,7 @@ body {
         padding-left: 20px;
         padding-top: 20px;
         gap: 40px;
+        z-index: 1000;
     }
 
     .bridal-lash-wrapper>div {
@@ -132,5 +258,23 @@ body {
         
     }
 
+    .packages-wrapper{
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    .packages-wrapper>div{
+        width: 60%;
+    }
 
+
+
+
+}
+
+@media screen and (max-width:600px){
+    .packages-wrapper>div{
+        width: 95%;
+    }
+    
 }
