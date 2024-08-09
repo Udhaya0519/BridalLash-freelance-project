@@ -205,16 +205,11 @@ body {
 
 
 
-
-
-
-
-
 /* packages ends */
 
 
 
-
+/* animation starts */
 
 @keyframes slidedownY{
     0%{
@@ -237,6 +232,15 @@ body {
     }
 }
 
+
+
+
+/* animation ends */
+
+
+
+
+/* media query starts */
 
 
 @media screen and (max-width:1000px){
@@ -291,3 +295,8 @@ body {
     }
     
 }
+
+
+
+
+/* media query ends */
