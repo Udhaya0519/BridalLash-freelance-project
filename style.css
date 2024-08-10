@@ -49,8 +49,9 @@ body {
 }
 
 .bridal-lash-wrapper>span {
+    font-family: "Dancing Script", cursive;
     font-size: 35px;
-    font-weight: bold;
+    font-weight: 400;
     color: #f9c352;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     height: 45px;
@@ -75,14 +76,29 @@ body {
 .bridal-lash-wrapper>nav>li>a {
     color: #ffffff;
     letter-spacing: 1px;
-}
-
-.bridal-lash-wrapper>nav>li:nth-child(1)>a:nth-child(1){
-    color: #f9c352;
+    position: relative;
 
 }
 .bridal-lash-wrapper>nav>li>a:hover {
     color: #f9c352;
+}
+.bridal-lash-wrapper>nav>li>a::after{
+    content: '';
+    background-color: #f9c352;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 300ms ease-in;
+    
+
+}
+.bridal-lash-wrapper>nav>li>a:hover::after{
+    transform: scaleX(1);
+
+
 }
 
 
@@ -106,7 +122,7 @@ body {
 .packages{
     margin: 40px 0;
     padding: 0 15px;
-    padding-top: 45px;
+    padding-top: 80px;
 
 
 }
@@ -209,6 +225,114 @@ body {
 
 
 
+/* customize section starts */
+
+
+.customize{
+    margin: 40px 0;
+    padding: 0 15px;
+
+
+}
+.customize>.container>h1{
+    color: #f9c352;
+    margin-bottom: 30px;
+    animation:slidedownY 1s ease-in-out forwards ;
+
+}
+.customize-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.customize-wrapper>div{
+    
+    width: 30%;
+    background-color: #4D3B3B;
+    border: 3px solid #4D3B3B;
+    border-radius: 5px;
+    padding: 10px;
+    animation:slidedownY 1s ease-in-out forwards ;
+
+
+}
+
+
+.customize-wrapper>div>div:nth-child(1)>img{
+    border-radius: 10px;
+}
+.customize-wrapper>div>h3{
+    color: #fff;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+.customize-wrapper>div>div:nth-child(3){
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.customize-wrapper>div>div:nth-child(3)>span{
+    color: #f9c352;
+    margin: 15px 0;
+    font-size: 20px;
+    font-weight: 300;
+}
+.customize-wrapper>div>button{
+    color: #fff;
+    background-color: #F9C352;
+    font-size: 18px;
+    font-weight: 300;
+    text-shadow: 0 0 20px #000;
+    letter-spacing: 1px;
+    padding: 8px 25px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+
+
+    position: relative;
+    overflow: hidden;
+    transition: color 0.7s ease;
+    
+
+}
+
+.customize-wrapper>div>button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #D48A25; /* Color filling */
+    transition: width 0.7s ease;
+    z-index: 1;
+}
+.customize-wrapper>div>button:hover::before {
+    width: 100%;
+
+
+}
+
+
+.customize-wrapper>div>button>span {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+
+
+/* customize section ends */
+
+
+
+
 /* animation starts */
 
 @keyframes slidedownY{
@@ -273,12 +397,27 @@ body {
         
     }
 
+    .packages{
+        padding-top: 55px;
+    }
+
     .packages-wrapper{
         flex-direction: column;
         align-items: center;
         gap: 40px;
     }
     .packages-wrapper>div{
+        width: 60%;
+    
+    }
+
+
+    .customize-wrapper{
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    .customize-wrapper>div{
         width: 60%;
     
     }
@@ -290,6 +429,12 @@ body {
 
 @media screen and (max-width:600px){
     .packages-wrapper>div{
+        width: 95%;
+
+    }
+
+
+    .customize-wrapper>div{
         width: 95%;
 
     }
