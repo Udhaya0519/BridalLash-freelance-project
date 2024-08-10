@@ -129,7 +129,7 @@ body {
 .packages>.container>h1{
     color: #f9c352;
     margin-bottom: 30px;
-    animation:slidedownY 1s ease-in-out forwards ;
+    animation:slidedownX 1s ease-in-out forwards ;
 
 }
 .packages-wrapper{
@@ -146,6 +146,9 @@ body {
     border-radius: 5px;
     padding: 10px;
     animation:slidedownY 1s ease-in-out forwards ;
+
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+
 
 
 }
@@ -254,6 +257,9 @@ body {
     border-radius: 5px;
     padding: 10px;
     animation:slidedownY 1s ease-in-out forwards ;
+
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+
 
 
 }
