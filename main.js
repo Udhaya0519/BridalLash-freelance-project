@@ -6,7 +6,7 @@ const mediaQuery = window.matchMedia("(max-width:1200px)")
 function handleMediaQuery(e) {
     if (e.matches === true) {
         menuBar.addEventListener("click", () => {
-            ToSlideLeft.style.left = "0%"
+            ToSlideLeft.style.left = "-5%"
             ToSlideLeft.style.transition = "0.7s"
         })
         links.forEach((el) => {

@@ -432,11 +432,11 @@ body {
 }
 .list-wrapper>div>div:nth-child(2)>div:nth-child(1)>h4{
     color: #fff;
-    font-size: 2vw;
+    font-size: 1vw;
 }
 .list-wrapper>div>div:nth-child(2)>div:nth-child(1)>div>span{
     color: #fff;
-    font-size: 3vw;
+    font-size: 1vw;
 }
 
 .list-wrapper>div>div:nth-child(2)>div:nth-child(1)>div{
@@ -550,7 +550,7 @@ body {
         position: absolute;
         flex-direction: column;
         top: 50px;
-        left: -60%;
+        left: -80%;
         width: 50%;
         align-items: start;
         background-color: #2f2325;
@@ -659,7 +659,6 @@ body {
         
     }
     .list-wrapper>div>div:nth-child(2)>div:nth-child(2){
-        justify-content: center;
         gap: 10px;
 
     }
