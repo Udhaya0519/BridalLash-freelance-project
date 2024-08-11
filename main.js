@@ -20,6 +20,7 @@ function handleMediaQuery(e) {
         })
         links.forEach((el) => {
             el.addEventListener("click", () => {
+                a=!a
                 ToSlideLeft.style.left = "-100%"
                 ToSlideLeft.style.transition = "1s"
 
