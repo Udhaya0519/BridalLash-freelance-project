@@ -464,13 +464,9 @@ body {
     padding: 6px 25px;
     border-radius: 5px;
     cursor: pointer;
-    transition-duration: 500ms;
 
 }
-.list-wrapper>div>div:nth-child(2)>div:nth-child(2)>span:hover{
-    background-color: #4D3B3B;
-    color: black;
-}
+
 
 
 .estimate{
@@ -615,6 +611,10 @@ body {
         width: 60%;
     }
 
+    .list{
+        padding: 0 15px;
+    }
+
 
     
 
@@ -658,6 +658,12 @@ body {
         align-items: start;
         
     }
+    .list-wrapper>div>div:nth-child(2)>div:nth-child(2){
+        justify-content: center;
+        gap: 10px;
+
+    }
+
     .list-wrapper>div>div:nth-child(2)>div:nth-child(1)>h4,
     .list-wrapper>div>div:nth-child(2)>div:nth-child(1)>div>span,
     .list-wrapper>div>div:nth-child(2)>div:nth-child(2)>span,
@@ -669,6 +675,7 @@ body {
         width: 30%;
         height: 50%;
     }
+    
      
 
 
