@@ -223,6 +223,34 @@ body {
 
 }
 
+.packages-wrapper>div>button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #D48A25; /* Color filling */
+    transition: width 0.7s ease;
+    z-index: 1;
+}
+.packages-wrapper>div>button:hover::before {
+    width: 100%;
+
+
+}
+
+
+
+
+.packages-wrapper>div>button::after{
+    content: 'ADD TO LIST';
+    position: relative;
+    z-index: 2;
+
+    color: #fff;
+}
+
 
 
 
@@ -379,6 +407,33 @@ body {
 
 }
 
+.customize-wrapper>div>button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #D48A25; /* Color filling */
+    transition: width 0.7s ease;
+    z-index: 1;
+}
+.customize-wrapper>div>button:hover::before {
+    width: 100%;
+
+
+}
+
+
+
+
+.customize-wrapper>div>button::after{
+    content: 'ADD TO LIST';
+    position: relative;
+    z-index: 2;
+
+    color: #fff;
+}
 
 
 
