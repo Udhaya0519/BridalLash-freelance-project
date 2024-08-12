@@ -84,7 +84,7 @@ const ItemCtrl = (function () {
             if (index !== -1) {
                 data.items.splice(index, 1);
             } else {
-                console.log(`Item with id ${id} not found.`);
+             return 
             }
             this.moneyUpdate()
         },
@@ -101,7 +101,6 @@ const ItemCtrl = (function () {
 
 
                 })
-                console.log(money);
 
                 return data.totalMoney = money
 
@@ -109,8 +108,6 @@ const ItemCtrl = (function () {
             }
         },
         updateQuantity: function (id, newQuantity) {
-            console.log(newQuantity);
-            console.log(id);
 
             const item = data.items.find(el => el.id === id);
             if (item) {
@@ -129,9 +126,6 @@ const ItemCtrl = (function () {
 const UICtrl = (function () {
     return {
         UITotalMoney: function (data) {
-            var n = document.querySelectorAll(".list-wrapper ")
-
-
             document.querySelector(".amount").innerText = data.totalMoney
 
         },
@@ -141,12 +135,7 @@ const UICtrl = (function () {
                 Id = el.id
             })
 
-
-
-            if (document.getElementById(`item-${Id}`)) {
-                console.log(document.getElementById(`item-${Id}`));
-
-            }
+  
             const div = document.createElement("div")
             div.id = `item-${Id}`
             div.innerHTML = `
@@ -230,6 +219,7 @@ const UICtrl = (function () {
 
 const AppCtrl = (function () {
     function loadEventListener() {
+   // event for add to list btn 
         document.querySelectorAll("section").forEach((el) => {
             el.addEventListener("click", (e) => {
                 if (e.target.className === "addToList") {
@@ -249,6 +239,7 @@ const AppCtrl = (function () {
             })
         })
 
+// event for removebtn
         document.addEventListener("DOMContentLoaded", function () {
             const removebtn = document.querySelector(".list-wrapper")
 
@@ -263,18 +254,14 @@ const AppCtrl = (function () {
                     UICtrl.UITotalMoney(ItemCtrl.getItem())
                     UICtrl.alertdanger()
                     UICtrl.alertshow()
-                    console.log(ItemCtrl.getItem());
-
                     UICtrl.hidesection(ItemCtrl.getItem())
                 }
-
-
+ 
+//    event for Quantity Plus and Minus
                 if (e.target.className.baseVal === "minus" && parseInt(e.target.parentElement.children[1].innerText) > 1) {
                     let val = parseInt(e.target.parentElement.children[1].innerText);
                     val -= 1;
-                    // var value= e.target.parentElement.parentElement.parentElement.children[0].children[1].children[1].innerText
                     var UiId = e.target.parentElement.parentElement.parentElement.parentElement.id
-
                     let stringNumber = UiId.split("-")
                     let IdNumber = parseInt(stringNumber[1])
                     ItemCtrl.updateQuantity(IdNumber, val)
@@ -284,13 +271,9 @@ const AppCtrl = (function () {
                     let val = parseInt(e.target.parentElement.children[1].innerText)
                     val += 1
                     var UiId = e.target.parentElement.parentElement.parentElement.parentElement.id
-
                     let stringNumber = UiId.split("-")
                     let IdNumber = parseInt(stringNumber[1])
-
-                    // var value= e.target.parentElement.parentElement.parentElement.children[0].children[1].children[1].innerText
                     ItemCtrl.updateQuantity(IdNumber, val)
-
                     e.target.parentElement.children[1].innerText = val
                     UICtrl.UITotalMoney(ItemCtrl.getItem())
 
@@ -300,6 +283,7 @@ const AppCtrl = (function () {
             });
         })
 
+           // event for Alert -hide
         document.querySelector(".alert>div >svg:nth-child(1)").addEventListener("click", () => {
             var alert = document.querySelector(".alert")
             alert.style.display = "none"
