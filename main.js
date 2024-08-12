@@ -14,7 +14,6 @@ function handleMediaQuery(e) {
             } else if (a == false) {
                 ToSlideLeft.style.left = "-100%"
                 ToSlideLeft.style.transition = "1s"
-
             }
 
         })
@@ -50,11 +49,12 @@ links.forEach((el) => {
 // Item Control
 
 const ItemCtrl = (function () {
-    const item = function (id, img, title, price) {
+    const item = function (id, img, title, price, quantity = 1) {
         this.id = id;
         this.img = img;
         this.title = title;
         this.price = price;
+        this.quantity = quantity;
     }
     const data = {
         items: [],
@@ -75,47 +75,51 @@ const ItemCtrl = (function () {
             const added = new item(Id, img, title, price);
             data.items.push(added);
 
-        }
-        ,
-        removeItem: function (id) {
-            if (data.items.length > 0) {
-
-
-                return data.items.splice(id, 1)
-
-            } else {
-                return data.items = []
-            }
-
         },
-        moneyUpdate: function (val) {
+        removeItem: function (id) {
+            // Find the index of the item to remove
+            const index = data.items.findIndex(item => item.id === id);
+
+            // Check if the index is valid
+            if (index !== -1) {
+                data.items.splice(index, 1);
+            } else {
+                console.log(`Item with id ${id} not found.`);
+            }
+            this.moneyUpdate()
+        },
+        moneyUpdate: function () {
             let money = 0
+
+
             if (data.items.length > 0) {
                 data.items.forEach((el) => {
                     var toChange1 = el.price.split(",")
                     var toChange2 = toChange1.join("")
                     var price = parseInt(toChange2)
-                    money += price
+                    money += price * el.quantity
 
 
                 })
+                console.log(money);
 
+                return data.totalMoney = money
 
-                if (val != undefined) {
-                    data.totalMoney = money * val
-
-                } else {
-                    data.totalMoney = money
-
-                }
-            } else if(data.items.length === 0){
-                data.totalMoney =0
 
             }
-
-
-
         },
+        updateQuantity: function (id, newQuantity) {
+            console.log(newQuantity);
+            console.log(id);
+
+            const item = data.items.find(el => el.id === id);
+            if (item) {
+
+                item.quantity = newQuantity;
+                this.moneyUpdate()
+            }
+        }
+
 
     }
 })()
@@ -205,14 +209,14 @@ const UICtrl = (function () {
             document.querySelector(".alert>div >svg:nth-child(1) ").style.color = "#28a745"
             document.querySelector(".alert>div>div >svg:nth-child(1)").style.color = "#28a745"
         },
-        showsection:function(){
-            document.querySelector(".list").style.display ="block"
+        showsection: function () {
+            document.querySelector(".list").style.display = "block"
 
         },
-        hidesection:function(data){
-             if( data.items.length ===0){
-            document.querySelector(".list").style.display ="none"
-             }
+        hidesection: function (data) {
+            if (data.items.length === 0) {
+                document.querySelector(".list").style.display = "none"
+            }
         }
 
     }
@@ -238,7 +242,9 @@ const AppCtrl = (function () {
                     UICtrl.UIAddItem(title, UIprice, img, ItemCtrl.getItem())
                     UICtrl.alertSuccess()
                     UICtrl.alertshow()
-                  UICtrl.showsection()
+                    UICtrl.showsection()
+                    console.log(ItemCtrl.getItem());
+
                 }
             })
         })
@@ -257,20 +263,34 @@ const AppCtrl = (function () {
                     UICtrl.UITotalMoney(ItemCtrl.getItem())
                     UICtrl.alertdanger()
                     UICtrl.alertshow()
-                   UICtrl.hidesection(ItemCtrl.getItem())
+                    console.log(ItemCtrl.getItem());
+
+                    UICtrl.hidesection(ItemCtrl.getItem())
                 }
 
 
                 if (e.target.className.baseVal === "minus" && parseInt(e.target.parentElement.children[1].innerText) > 1) {
                     let val = parseInt(e.target.parentElement.children[1].innerText);
                     val -= 1;
-                    ItemCtrl.moneyUpdate(val)
+                    // var value= e.target.parentElement.parentElement.parentElement.children[0].children[1].children[1].innerText
+                    var UiId = e.target.parentElement.parentElement.parentElement.parentElement.id
+
+                    let stringNumber = UiId.split("-")
+                    let IdNumber = parseInt(stringNumber[1])
+                    ItemCtrl.updateQuantity(IdNumber, val)
                     e.target.parentElement.children[1].innerText = val;
                     UICtrl.UITotalMoney(ItemCtrl.getItem())
                 } else if (e.target.className.baseVal === "plus") {
                     let val = parseInt(e.target.parentElement.children[1].innerText)
                     val += 1
-                    ItemCtrl.moneyUpdate(val)
+                    var UiId = e.target.parentElement.parentElement.parentElement.parentElement.id
+
+                    let stringNumber = UiId.split("-")
+                    let IdNumber = parseInt(stringNumber[1])
+
+                    // var value= e.target.parentElement.parentElement.parentElement.children[0].children[1].children[1].innerText
+                    ItemCtrl.updateQuantity(IdNumber, val)
+
                     e.target.parentElement.children[1].innerText = val
                     UICtrl.UITotalMoney(ItemCtrl.getItem())
 
