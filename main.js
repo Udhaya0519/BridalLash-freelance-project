@@ -90,29 +90,29 @@ const ItemCtrl = (function () {
         },
         moneyUpdate: function (val) {
             let money = 0
-      if(data.items.length >0){
-        data.items.forEach((el) => {
-            var toChange1 = el.price.split(",")
-            var toChange2 = toChange1.join("")
-            var price = parseInt(toChange2)
-            money += price
+            if (data.items.length > 0) {
+                data.items.forEach((el) => {
+                    var toChange1 = el.price.split(",")
+                    var toChange2 = toChange1.join("")
+                    var price = parseInt(toChange2)
+                    money += price
 
 
-        })
+                })
 
 
-        if (val != undefined) {
-            data.totalMoney = money * val
+                if (val != undefined) {
+                    data.totalMoney = money * val
 
-        } else {
-            data.totalMoney = money
+                } else {
+                    data.totalMoney = money
 
-        }
-      }else{
-        data.totalMoney = money
-        
-      }
-          
+                }
+            } else if(data.items.length === 0){
+                data.totalMoney =0
+
+            }
+
 
 
         },
@@ -126,8 +126,8 @@ const UICtrl = (function () {
     return {
         UITotalMoney: function (data) {
             var n = document.querySelectorAll(".list-wrapper ")
-            
-                
+
+
             document.querySelector(".amount").innerText = data.totalMoney
 
         },
@@ -136,7 +136,7 @@ const UICtrl = (function () {
             data.items.forEach((el) => {
                 Id = el.id
             })
-            
+
 
 
             if (document.getElementById(`item-${Id}`)) {
@@ -181,7 +181,40 @@ const UICtrl = (function () {
 
 
             })
+        },
+        alertshow: function () {
+            var alert = document.querySelector(".alert")
+            alert.style.display = "flex"
+            setTimeout(() => {
+                alert.style.display = "none"
+
+            }, 3000);
+        },
+        alertdanger: function () {
+            document.querySelector(".alert").style.backgroundColor = "#ffcccb"
+            document.querySelector(".alert").style.borderLeft = "8px solid red"
+            document.querySelector(".msg").innerText = "Deleted sucessful!y"
+            document.querySelector(".alert>div >svg:nth-child(1) ").style.color = "red"
+            document.querySelector(".alert>div>div >svg:nth-child(1)").style.color = "red"
+
+        },
+        alertSuccess: function () {
+            document.querySelector(".alert").style.backgroundColor = "#d4edda"
+            document.querySelector(".alert").style.borderLeft = " 8px solid #28a745"
+            document.querySelector(".msg").innerText = "Added successful!y"
+            document.querySelector(".alert>div >svg:nth-child(1) ").style.color = "#28a745"
+            document.querySelector(".alert>div>div >svg:nth-child(1)").style.color = "#28a745"
+        },
+        showsection:function(){
+            document.querySelector(".list").style.display ="block"
+
+        },
+        hidesection:function(data){
+             if( data.items.length ===0){
+            document.querySelector(".list").style.display ="none"
+             }
         }
+
     }
 
 })()
@@ -203,7 +236,9 @@ const AppCtrl = (function () {
                     ItemCtrl.moneyUpdate()
                     UICtrl.UITotalMoney(ItemCtrl.getItem())
                     UICtrl.UIAddItem(title, UIprice, img, ItemCtrl.getItem())
-
+                    UICtrl.alertSuccess()
+                    UICtrl.alertshow()
+                  UICtrl.showsection()
                 }
             })
         })
@@ -220,21 +255,23 @@ const AppCtrl = (function () {
                     UICtrl.UIRemoveItem(IdNumber)
                     ItemCtrl.moneyUpdate()
                     UICtrl.UITotalMoney(ItemCtrl.getItem())
-                     
+                    UICtrl.alertdanger()
+                    UICtrl.alertshow()
+                   UICtrl.hidesection(ItemCtrl.getItem())
                 }
 
 
                 if (e.target.className.baseVal === "minus" && parseInt(e.target.parentElement.children[1].innerText) > 1) {
                     let val = parseInt(e.target.parentElement.children[1].innerText);
                     val -= 1;
-                    e.target.parentElement.children[1].innerText = val;
                     ItemCtrl.moneyUpdate(val)
+                    e.target.parentElement.children[1].innerText = val;
                     UICtrl.UITotalMoney(ItemCtrl.getItem())
                 } else if (e.target.className.baseVal === "plus") {
                     let val = parseInt(e.target.parentElement.children[1].innerText)
                     val += 1
-                    e.target.parentElement.children[1].innerText = val
                     ItemCtrl.moneyUpdate(val)
+                    e.target.parentElement.children[1].innerText = val
                     UICtrl.UITotalMoney(ItemCtrl.getItem())
 
                 }
@@ -243,11 +280,14 @@ const AppCtrl = (function () {
             });
         })
 
+        document.querySelector(".alert>div >svg:nth-child(1)").addEventListener("click", () => {
+            var alert = document.querySelector(".alert")
+            alert.style.display = "none"
+
+
+        })
+
     }
-
-
-
-
 
 
 
@@ -263,3 +303,12 @@ const AppCtrl = (function () {
 })()
 
 AppCtrl.start()
+
+
+
+
+
+
+
+
+
