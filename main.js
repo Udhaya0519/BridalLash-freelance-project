@@ -71,9 +71,24 @@ const ItemCtrl = (function () {
             } else {
                 Id = 0;
             }
-
             const added = new item(Id, img, title, price);
-            data.items.push(added);
+            let exists = false;
+
+            for (let i = 0; i < data.items.length; i++) {
+                if (data.items[i].img === added.img) {
+                    exists = true; // Mark as found if an item with the same img exists
+                    break; // Stop the loop once a match is found
+                }
+            }
+
+            if (!exists) {
+                data.items.push(added); // Add the new item if no match was found
+            }
+
+
+
+
+
 
         },
         removeItem: function (id) {
@@ -84,7 +99,7 @@ const ItemCtrl = (function () {
             if (index !== -1) {
                 data.items.splice(index, 1);
             } else {
-             return 
+                return
             }
             this.moneyUpdate()
         },
@@ -133,35 +148,36 @@ const UICtrl = (function () {
             let Id;
             data.items.forEach((el) => {
                 Id = el.id
+
             })
 
-  
+
             const div = document.createElement("div")
             div.id = `item-${Id}`
             div.innerHTML = `
-                             
-                              <div>
-                                <img width="100%" height="100%" src=${img} alt="">
-                            </div>
-                            <div>
-                                <div>
-                                    <h4>${title}</h4>
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25" fill="rgba(249,195,82,1)"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM13.5003 8C13.8278 8.43606 14.0625 8.94584 14.175 9.5H16V11H14.175C13.8275 12.7117 12.3142 14 10.5 14H10.3107L14.0303 17.7197L12.9697 18.7803L8 13.8107V12.5H10.5C11.4797 12.5 12.3131 11.8739 12.622 11H8V9.5H12.622C12.3131 8.62611 11.4797 8 10.5 8H8V6.5H16V8H13.5003Z"></path></svg>
-                                        <span>${price}</span>
-                                    </div>
+                                 
+                                  <div>
+                                    <img width="100%" height="100%" src=${img} alt="">
                                 </div>
                                 <div>
                                     <div>
-                                        <svg class="minus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M5 11V13H19V11H5Z"></path></svg>
-                                        <span class="quantity">1</span>
-                                        <svg class="plus"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path></svg>
+                                        <h4>${title}</h4>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25" fill="rgba(249,195,82,1)"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM13.5003 8C13.8278 8.43606 14.0625 8.94584 14.175 9.5H16V11H14.175C13.8275 12.7117 12.3142 14 10.5 14H10.3107L14.0303 17.7197L12.9697 18.7803L8 13.8107V12.5H10.5C11.4797 12.5 12.3131 11.8739 12.622 11H8V9.5H12.622C12.3131 8.62611 11.4797 8 10.5 8H8V6.5H16V8H13.5003Z"></path></svg>
+                                            <span>${price}</span>
+                                        </div>
                                     </div>
-                                    <span class="remove">Remove</span>
+                                    <div>
+                                        <div>
+                                            <svg class="minus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M5 11V13H19V11H5Z"></path></svg>
+                                            <span class="quantity">1</span>
+                                            <svg class="plus"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path></svg>
+                                        </div>
+                                        <span class="remove">Remove</span>
+                                    </div>
+            
                                 </div>
-        
-                            </div>
-                        `
+                            `
             document.querySelector(".list-wrapper").appendChild(div)
         },
         UIRemoveItem: function (idnum) {
@@ -183,20 +199,20 @@ const UICtrl = (function () {
 
             }, 3000);
         },
-        alertdanger: function () {
-            document.querySelector(".alert").style.backgroundColor = "#ffcccb"
-            document.querySelector(".alert").style.borderLeft = "8px solid red"
-            document.querySelector(".msg").innerText = "Deleted sucessful!y"
-            document.querySelector(".alert>div >svg:nth-child(1) ").style.color = "red"
-            document.querySelector(".alert>div>div >svg:nth-child(1)").style.color = "red"
+        alertdanger: function (bg, bl, text, color) {
+            document.querySelector(".alert").style.backgroundColor = bg
+            document.querySelector(".alert").style.borderLeft = bl
+            document.querySelector(".msg").innerText = text
+            document.querySelector(".alert>div >svg:nth-child(1) ").style.color = color
+            document.querySelector(".alert>div>div >svg:nth-child(1)").style.color = color
 
         },
-        alertSuccess: function () {
-            document.querySelector(".alert").style.backgroundColor = "#d4edda"
-            document.querySelector(".alert").style.borderLeft = " 8px solid #28a745"
-            document.querySelector(".msg").innerText = "Added successful!y"
-            document.querySelector(".alert>div >svg:nth-child(1) ").style.color = "#28a745"
-            document.querySelector(".alert>div>div >svg:nth-child(1)").style.color = "#28a745"
+        alertSuccess: function (bg, bl, text, color) {
+            document.querySelector(".alert").style.backgroundColor = bg
+            document.querySelector(".alert").style.borderLeft = bl
+            document.querySelector(".msg").innerText = text
+            document.querySelector(".alert>div >svg:nth-child(1) ").style.color = color
+            document.querySelector(".alert>div>div >svg:nth-child(1)").style.color = color
         },
         showsection: function () {
             document.querySelector(".list").style.display = "block"
@@ -219,27 +235,44 @@ const UICtrl = (function () {
 
 const AppCtrl = (function () {
     function loadEventListener() {
-   // event for add to list btn 
+        // event for add to list btn 
         document.querySelectorAll("section").forEach((el) => {
             el.addEventListener("click", (e) => {
                 if (e.target.className === "addToList") {
                     const title = e.target.parentElement.children[1].innerText
                     const UIprice = e.target.parentElement.children[2].innerText
                     const img = e.target.parentElement.children[0].children[0].getAttribute('src')
-                    ItemCtrl.setItem(title, UIprice, img)
-                    ItemCtrl.moneyUpdate()
-                    UICtrl.UITotalMoney(ItemCtrl.getItem())
-                    UICtrl.UIAddItem(title, UIprice, img, ItemCtrl.getItem())
-                    UICtrl.alertSuccess()
-                    UICtrl.alertshow()
-                    UICtrl.showsection()
-                    console.log(ItemCtrl.getItem());
+                    const existingItem = document.querySelectorAll(`.list-wrapper >div >div>img`);
+                    let exists = false;
+
+                    existingItem.forEach((el) => {
+                        if (el.getAttribute("src") === img) {
+                            exists = true; // Mark as found if an item with the same img exists
+                            UICtrl.alertdanger("#ffcccb", "8px solid red", "Item already exists", "red")
+                            UICtrl.alertshow()
+
+                        }
+                    })
+
+                    if (!exists) {
+
+                        ItemCtrl.setItem(title, UIprice, img)
+                        ItemCtrl.moneyUpdate()
+                        UICtrl.UITotalMoney(ItemCtrl.getItem())
+                        UICtrl.UIAddItem(title, UIprice, img, ItemCtrl.getItem())
+                        UICtrl.alertSuccess("#d4edda", " 8px solid #28a745", "Added successful!y", "#28a745")
+                        UICtrl.alertshow()
+                        UICtrl.showsection()
+                        console.log(ItemCtrl.getItem());
+                    }
+
+
 
                 }
             })
         })
 
-// event for removebtn
+        // event for removebtn
         document.addEventListener("DOMContentLoaded", function () {
             const removebtn = document.querySelector(".list-wrapper")
 
@@ -252,12 +285,12 @@ const AppCtrl = (function () {
                     UICtrl.UIRemoveItem(IdNumber)
                     ItemCtrl.moneyUpdate()
                     UICtrl.UITotalMoney(ItemCtrl.getItem())
-                    UICtrl.alertdanger()
+                    UICtrl.alertdanger("#ffcccb", "8px solid red", "Deleted sucessful!y", "red")
                     UICtrl.alertshow()
                     UICtrl.hidesection(ItemCtrl.getItem())
                 }
- 
-//    event for Quantity Plus and Minus
+
+                //    event for Quantity Plus and Minus
                 if (e.target.className.baseVal === "minus" && parseInt(e.target.parentElement.children[1].innerText) > 1) {
                     let val = parseInt(e.target.parentElement.children[1].innerText);
                     val -= 1;
@@ -283,7 +316,7 @@ const AppCtrl = (function () {
             });
         })
 
-           // event for Alert -hide
+        // event for Alert -hide
         document.querySelector(".alert>div >svg:nth-child(1)").addEventListener("click", () => {
             var alert = document.querySelector(".alert")
             alert.style.display = "none"
@@ -307,6 +340,7 @@ const AppCtrl = (function () {
 })()
 
 AppCtrl.start()
+
 
 
 
