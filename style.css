@@ -223,6 +223,34 @@ body {
 
 }
 
+.packages-wrapper>div>button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #D48A25; /* Color filling */
+    transition: width 0.7s ease;
+    z-index: 1;
+}
+.packages-wrapper>div>button:hover::before {
+    width: 100%;
+
+
+}
+
+
+
+
+.packages-wrapper>div>button::after{
+    content: 'ADD TO LIST';
+    position: relative;
+    z-index: 2;
+
+    color: #fff;
+}
+
 
 
 
@@ -379,6 +407,33 @@ body {
 
 }
 
+.customize-wrapper>div>button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #D48A25; /* Color filling */
+    transition: width 0.7s ease;
+    z-index: 1;
+}
+.customize-wrapper>div>button:hover::before {
+    width: 100%;
+
+
+}
+
+
+
+
+.customize-wrapper>div>button::after{
+    content: 'ADD TO LIST';
+    position: relative;
+    z-index: 2;
+
+    color: #fff;
+}
 
 
 
@@ -399,6 +454,7 @@ body {
 
 .products {
     margin: 40px 0;
+    padding: 0 15px;
 }
 
 .products>.container>h1 {
@@ -410,7 +466,7 @@ body {
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 100px 15px;
+    padding: 100px 0;
 }
 
 .products-wrapper>div {
@@ -445,7 +501,9 @@ body {
 
 .list {
     margin: 40px 0;
-  display: none;
+    display: none;
+    padding: 0 15px;
+
 }
 
 .list>.container>h1 {
@@ -496,12 +554,12 @@ body {
 
 .list-wrapper>div>div:nth-child(2)>div:nth-child(1)>h4 {
     color: #fff;
-    font-size: 1vw;
+    font-size: 15px;
 }
 
 .list-wrapper>div>div:nth-child(2)>div:nth-child(1)>div>span {
     color: #fff;
-    font-size: 1vw;
+    font-size: 15px;
 }
 
 .list-wrapper>div>div:nth-child(2)>div:nth-child(1)>div {
@@ -705,6 +763,13 @@ body {
 
     .list {
         padding: 0 15px;
+    }
+    .list-wrapper>div>div:nth-child(2)>div:nth-child(1)>h4 {
+        font-size: 12px;
+    }
+    
+    .list-wrapper>div>div:nth-child(2)>div:nth-child(1)>div>span {
+        font-size: 12px;
     }
 
 
