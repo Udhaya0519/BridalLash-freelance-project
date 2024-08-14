@@ -248,7 +248,7 @@ const AppCtrl = (function () {
                     existingItem.forEach((el) => {
                         if (el.getAttribute("src") === img) {
                             exists = true; // Mark as found if an item with the same img exists
-                            UICtrl.alertdanger("#ffcccb", "8px solid red", "Item already exists", "red")
+                            UICtrl.alertdanger("#ffcccb", "8px solid red", "Item already  added", "red")
                             UICtrl.alertshow()
 
                         }
