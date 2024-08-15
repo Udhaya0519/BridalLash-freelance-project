@@ -222,8 +222,33 @@ const UICtrl = (function () {
             if (data.items.length === 0) {
                 document.querySelector(".list").style.display = "none"
             }
-        }
+        },
+        whatsappSection: function(data) {
+            let contactNumber = "9940302644"
+            let combinedMessage = `Your Dream Bridal Look Awaits! :\n\nTotal:${data.totalMoney}\n\n`;
 
+            data.items.forEach((el, index) => {
+                // Create the message for each item with numbering for clarity
+                console.log(el.img);
+                
+                const message = `${index + 1}) ${el.title}\n   Price: ${el.price}\n  Quantity: ${el.quantity}\n\n`;
+                
+                // Combine each message into one big message
+                combinedMessage += message;
+            });
+            
+            // Encode the combined message and update the WhatsApp link
+   const url = `https://wa.me/${contactNumber}?text=${encodeURIComponent(combinedMessage)}`;
+
+            
+            // Assuming there's an anchor tag with ID 'whatsapp-share' that triggers the WhatsApp sharing
+            document.getElementById('whatsapp-share').href = url;
+            
+        }
+        
+        
+        
+         
     }
 
 })()
@@ -250,7 +275,6 @@ const AppCtrl = (function () {
                             exists = true; // Mark as found if an item with the same img exists
                             UICtrl.alertdanger("#ffcccb", "8px solid red", "Item already  added", "red")
                             UICtrl.alertshow()
-
                         }
                     })
 
@@ -263,7 +287,7 @@ const AppCtrl = (function () {
                         UICtrl.alertSuccess("#d4edda", " 8px solid #28a745", "Added successful!y", "#28a745")
                         UICtrl.alertshow()
                         UICtrl.showsection()
-                        console.log(ItemCtrl.getItem());
+
                     }
 
 
@@ -324,6 +348,11 @@ const AppCtrl = (function () {
 
         })
 
+        // event for whatsapp
+            document.querySelector("#whatsapp-share").addEventListener("click",()=>{
+                UICtrl.whatsappSection(ItemCtrl.getItem())
+                                
+            })
     }
 
 
@@ -350,3 +379,10 @@ AppCtrl.start()
 
 
 
+document.getElementById('whatsapp-share').addEventListener('click', function() {
+ ItemCtrl.getItem()
+
+
+
+  
+});
