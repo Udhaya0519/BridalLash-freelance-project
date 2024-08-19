@@ -56,7 +56,7 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     height: 45px;
     border-bottom: 4px solid #f9c352;
-    animation: slidedownY 1s ease-in-out forwards;
+    /* animation: slidedownY 1s ease-in-out forwards; */
 
 }
 
@@ -68,7 +68,7 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
-    animation: slidedownX 1s ease-in-out forwards;
+    /* animation: slidedownX 1s ease-in-out forwards; */
 
 
 }
@@ -123,19 +123,6 @@ body {
 
 /* banner section starts */
 
-.banner{
-    /* background-image: url(./img/banner1.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat; */
-    margin-top: 60px;
-}
-.banner-wrapper{
-    /* height: 800px; */
-    /* width: 100vw; */
-
-}
-
 
  
  
@@ -169,7 +156,7 @@ body {
 .packages>.container>h1 {
     color: #f9c352;
     margin-bottom: 30px;
-    animation: slidedownX 1s ease-in-out forwards;
+    /* animation: slidedownX 1s ease-in-out forwards; */
 
 }
 
@@ -187,7 +174,7 @@ body {
     border: 3px solid #4D3B3B;
     border-radius: 5px;
     padding: 10px;
-    animation: slidedownY 1s ease-in-out forwards;
+    /* animation: slidedownY 1s ease-in-out forwards; */
 
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
 
@@ -235,21 +222,21 @@ body {
     cursor: pointer;
 
 
-    position: relative;
-    overflow: hidden;
-    transition: color 0.7s ease;
+    /* position: relative; */
+    /* overflow: hidden; */
+    /* transition: color 0.7s ease; */
 
 
 }
 
-.packages-wrapper>div>button::before{
+/* .packages-wrapper>div>button::before{
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 0;
     height: 100%;
-    background-color: #D48A25; /* Color filling */
+    background-color: #D48A25; 
     transition: width 0.7s ease;
     z-index: 1;
 }
@@ -268,7 +255,7 @@ body {
     z-index: 2;
 
     color: #fff;
-}
+} */
 
 
 
@@ -354,7 +341,7 @@ body {
 .customize>.container>h1 {
     color: #f9c352;
     margin-bottom: 30px;
-    animation: slidedownY 1s ease-in-out forwards;
+    /* animation: slidedownY 1s ease-in-out forwards; */
 
 }
 
@@ -372,7 +359,7 @@ body {
     border: 3px solid #4D3B3B;
     border-radius: 5px;
     padding: 10px;
-    animation: slidedownY 1s ease-in-out forwards;
+    /* animation: slidedownY 1s ease-in-out forwards; */
 
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
 
@@ -419,14 +406,14 @@ body {
     cursor: pointer;
 
 
-    position: relative;
-    overflow: hidden;
-    transition: color 0.7s ease;
+    /* position: relative; */
+    /* overflow: hidden; */
+    /* transition: color 0.7s ease; */
 
 
 }
 
-.customize-wrapper>div>button::before{
+/* .customize-wrapper>div>button::before{
     content: '';
     position: absolute;
     top: 0;
@@ -434,25 +421,25 @@ body {
     width: 0;
     height: 100%;
     background-color: #D48A25; /* Color filling */
-    transition: width 0.7s ease;
-    z-index: 1;
-}
-.customize-wrapper>div>button:hover::before {
+    /* transition: width 0.7s ease; */
+    /* z-index: 1; */
+/* } */
+/* .customize-wrapper>div>button:hover::before {
     width: 100%;
 
 
-}
+} */ */
 
 
 
 
-.customize-wrapper>div>button::after{
+/* .customize-wrapper>div>button::after{
     content: 'ADD TO LIST';
     position: relative;
     z-index: 2;
 
     color: #fff;
-}
+} */
 
 
 
@@ -711,9 +698,13 @@ body {
     gap: 12px;
     align-items: center;
     color: #fff;
+   order: 3;
 }
-.contact-wrapper >div:nth-child(2)>svg{
-    cursor: pointer;
+.contact-wrapper >div:nth-child(2)>p{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
 }
 
 .contact-wrapper >div:nth-child(2)>h1:nth-child(1),.contact-wrapper >div:nth-child(3)>h1:nth-child(1){
@@ -727,7 +718,9 @@ body {
     align-items: center;
   color: #fff;
   gap: 7px;
+  order: 2;
 }
+
 .contact-wrapper >div:nth-child(3)>div:nth-child(2){
    display: flex;
    flex-direction: column;
@@ -739,6 +732,7 @@ body {
     display: flex;
     align-items: center;
     gap: 5px;
+    font-size: 14px;
 }
 .contact-wrapper >div:nth-child(1)>span{
     display: none;
@@ -753,12 +747,14 @@ body {
     z-index: 1000;
     right: 20px;
     bottom: 25px;
+ cursor: pointer;
 }
 .arrow-wrapper >svg{
       background-color: #ffffff;
       width: 40px;
       height: 40px;
     border-radius: 50%;      
+  cursor: pointer;
 }
 
 /* arrow end */
@@ -766,19 +762,20 @@ body {
 /* foot start */
 .foot{
     background-color: black;
-  padding: 15px;
+    padding: 15px 15px;
+
 }
 .foot-wrapper{
      display:flex;
      flex-direction: column;
      align-items: center;
      color: #fff;
+     font-family: "poppins", sans-serif;  
      gap: 10px;
     }
 
-.foot-wrapper >span{
-   font-weight: 500;
-}
+/* foot end */
+
 /* animation starts */
 
 @keyframes slidedownY {

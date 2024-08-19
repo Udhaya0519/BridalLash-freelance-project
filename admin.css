@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -15,14 +16,19 @@ li {
 
 
 body {
-    background-color: #2f2325;
-    font-family: "poppins", sans-serif;    
+    /* background-color: #2f2325; */
+    background-color: rgb(24, 24, 24);
+    /* font-family: "poppins", sans-serif; */
+    font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    color: white;
+    font-weight: 700;
+    /* color:; */
+    color: #00ff03;
+
 }
 
-svg:hover{
+svg:hover {
     cursor: pointer;
 
 }
@@ -36,23 +42,28 @@ svg:hover{
 
 /* edit packages section starts */
 
-.edit-packages{
-    margin-bottom: 50px;                                         
+.edit-packages {
+    margin-bottom: 50px;
 }
-.edit-packages>.container>h1{
-    color: #f9c352;
+
+.edit-packages>.container>h1 {
+    /* color: #f9c352; */
+    color: #00ff03;
+
     margin: 50px 0;
     text-align: center;
 
 
 }
 
-.edit-packages-wrapper>div{
+.edit-packages-wrapper>div {
     /* width: 60%; */
     max-width: 750px;
-    background-color: #4D3B3B;
+    /* background-color: #4D3B3B; */
+    background-color: rgb(34, 34, 34);
+
     border-radius: 5px;
-    padding: 20px 35px; 
+    padding: 20px 35px;
     animation: slidedownY 1s ease-in-out forwards;
 
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
@@ -63,15 +74,18 @@ svg:hover{
     margin-bottom: 40px;
 
 }
-.edit-packages-wrapper>div>div:nth-child(1){
+
+.edit-packages-wrapper>div>div:nth-child(1) {
     /* width: 25%; */
     width: 20%;
 
 }
-.edit-packages-wrapper>div>div:nth-child(1)>img{
+
+.edit-packages-wrapper>div>div:nth-child(1)>img {
     border-radius: 10px;
 }
-.edit-packages-wrapper>div>div:nth-child(2){
+
+.edit-packages-wrapper>div>div:nth-child(2) {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,57 +96,59 @@ svg:hover{
 
 
 }
-.edit-packages-wrapper>div>div:nth-child(2)>h4{
+
+.edit-packages-wrapper>div>div:nth-child(2)>h4 {
     letter-spacing: 1px;
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 20px;
+   color: white;
+   font-weight: 400;
+
 }
-.edit-packages-wrapper>div>div:nth-child(2)>div:nth-child(2){
+
+.edit-packages-wrapper>div>div:nth-child(2)>div:nth-child(2) {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
 }
-.edit-packages-wrapper>div>div:nth-child(2)>div:nth-child(2)>a{
+
+.edit-packages-wrapper>div>div:nth-child(2)>div:nth-child(2)>a {
     color: white;
-    background-color: #D48A25;
+    /* background-color: #D48A25; */
+    background-color: #00ff03;
     text-shadow: 0 0 20px #000;
     padding: 7px 20px;
     border-radius: 25px;
     transition-duration: 500ms;
 }
-.edit-packages-wrapper>div>div:nth-child(2)>div:nth-child(2)>a:hover{
-    background-color: #F9C352 ;
+
+.edit-packages-wrapper>div>div:nth-child(2)>div:nth-child(2)>a:hover {
+    /* background-color: #F9C352; */
 }
 
 
-.edit-packages-wrapper>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(1){
+.edit-packages-wrapper>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(1) {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-.edit-packages-wrapper>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>input{
+
+.edit-packages-wrapper>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>input {
     font-size: 12px;
     border-radius: 3px;
-    padding: 4px ;
-    border: 1px solid;
+    padding: 6px;
+    /* border: 1px solid; */
+   border: none;
+    color: white;
+    background-color: rgb(51, 51, 51);
+    
 }
-.edit-packages-wrapper>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>input:focus{
+
+.edit-packages-wrapper>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>input:focus {
     outline: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* edit packages section ends */
 
@@ -140,19 +156,22 @@ svg:hover{
 
 /* edit customize section starts */
 
-.edit-customize>.container>h1{
-    color: #f9c352;
+.edit-customize>.container>h1 {
+    /* color: #f9c352; */
+    color: #00ff03;
     margin: 50px 0;
     text-align: center;
 
 }
 
-.edit-customize-wrapper>div{
+.edit-customize-wrapper>div {
     /* width: 60%; */
     max-width: 750px;
-    background-color: #4D3B3B;
+    /* background-color: #4D3B3B; */
+    background-color: rgb(34, 34, 34);
+
     border-radius: 5px;
-    padding: 20px 35px; 
+    padding: 20px 35px;
     animation: slidedownY 1s ease-in-out forwards;
 
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
@@ -163,57 +182,73 @@ svg:hover{
     margin-bottom: 40px;
 
 }
-.edit-customize-wrapper>div>div:nth-child(1){
+
+.edit-customize-wrapper>div>div:nth-child(1) {
     width: 20%;
 }
-.edit-customize-wrapper>div>div:nth-child(1)>img{
+
+.edit-customize-wrapper>div>div:nth-child(1)>img {
     border-radius: 10px;
 }
-.edit-customize-wrapper>div>div:nth-child(2){
+
+.edit-customize-wrapper>div>div:nth-child(2) {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 70%;
 
 }
-.edit-customize-wrapper>div>div:nth-child(2)>h4{
+
+.edit-customize-wrapper>div>div:nth-child(2)>h4 {
     letter-spacing: 1px;
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 20px;
-
+  color: white;
+  font-weight: 400;
 }
-.edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2){
+
+.edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2) {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
 }
-.edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2)>a{
+
+.edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2)>a {
     color: white;
-    background-color: #D48A25;
+    /* background-color: #D48A25; */
+    background-color: #00ff03;
+
     text-shadow: 0 0 20px #000;
     padding: 7px 20px;
     border-radius: 25px;
     transition-duration: 500ms;
 }
-.edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2)>a:hover{
-    background-color: #F9C352 ;
+
+.edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2)>a:hover {
+    /* background-color: #F9C352; */
 }
 
 
-.edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(1){
+.edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(1) {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-.edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>input{
+
+.edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>input {
     font-size: 12px;
     border-radius: 3px;
-    padding: 4px ;
-    border: 1px solid;
+    padding: 6px;
+    /* border: 1px solid; */
+   border: none;
+   color: white;
+    background-color: rgb(51, 51, 51);
+
 }
-.edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>input:focus{
+
+.edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>input:focus {
     outline: none;
 }
 
@@ -233,62 +268,134 @@ svg:hover{
 /* edit customize section ends */
 
 
+/* popup start */
+.popup {
+    padding: 20px 0px;
+}
+
+
+.docker {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.popup-wrapper {
+    background-color: rgb(34, 34, 34);
+    padding: 20px 0px;
+}
+
+.popup-wrapper>div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+  position: relative;
+}
+.popup-wrapper>div:nth-child(1) >h3{
+  color: #00ff03;
+}
+.popup-wrapper>div:nth-child(1)>svg:nth-child(2) {
+    position: absolute;
+    right: 10px;
+    top: -10px;
+}
+
+.popup-wrapper>form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color:white;
+    font-weight: 400;
+    padding: 0px 20px;
+}
+
+.popup-wrapper>form>input {
+    width: 95%;
+    border: none;
+    padding: 8px 10px;
+    background-color: rgb(51, 51, 51);
+color: white;
+}
+
+.popup-wrapper>form>input:focus {
+    outline: none;
+}
+
+.popup-wrapper>form>button{
+   width: 95%;
+   background-color: #00ff03;
+   color: white;
+   padding: 10px 8px;
+   border: none;
+   cursor: pointer;
+   font-family: "Oswald", sans-serif;
+
+}
+/* popup end */
+
 /* media query starts */
 
 
-@media screen and (max-width:800px){
+@media screen and (max-width:800px) {
 
     .edit-packages,
-    .edit-customize{
+    .edit-customize {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
     .edit-packages-wrapper>div,
-    .edit-customize-wrapper>div{
+    .edit-customize-wrapper>div {
         width: 95%;
     }
+
     .edit-packages-wrapper>div>div:nth-child(2)>div:nth-child(2),
-    .edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2){
+    .edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2) {
         flex-direction: column;
         align-items: start;
     }
+
     .edit-packages-wrapper>div>div:nth-child(2)>h4,
-    .edit-customize-wrapper>div>div:nth-child(2)>h4{
+    .edit-customize-wrapper>div>div:nth-child(2)>h4 {
         font-size: 15px;
     }
+
     .edit-customize-wrapper>div>div:nth-child(1),
-    .edit-packages-wrapper>div>div:nth-child(1){
+    .edit-packages-wrapper>div>div:nth-child(1) {
         height: 60%;
     }
+
     .edit-packages-wrapper>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(1),
-    .edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(1){
+    .edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(1) {
         margin-bottom: 10px;
     }
 
-
-
-
+   
 
 }
 
-@media screen and (max-width:600px){
+@media screen and (max-width:600px) {
+
     .edit-packages-wrapper>div>div:nth-child(2),
-    .edit-customize-wrapper>div>div:nth-child(2){
+    .edit-customize-wrapper>div>div:nth-child(2) {
         gap: 8px;
     }
+
     .edit-packages-wrapper>div>div:nth-child(2)>div:nth-child(2)>a,
-    .edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2)>a{
+    .edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2)>a {
         font-size: 15px;
         padding: 5px 10px;
         /* margin-left: auto; */
     }
+
     .edit-packages-wrapper>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>input,
-    .edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>input{
-            width: 140px;
+    .edit-customize-wrapper>div>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>input {
+        width: 140px;
 
     }
-    
+    .docker {
+        width:80%;
+          }
+      
 
 
 }

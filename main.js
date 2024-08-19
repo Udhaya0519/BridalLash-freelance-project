@@ -350,6 +350,14 @@ const AppCtrl = (function () {
                 UICtrl.whatsappSection(ItemCtrl.getItem())
                                 
             })
+
+            document.querySelector(".arrow").addEventListener("click",()=>{
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: 'smooth'
+                  });
+            })
     }
 
 
@@ -376,10 +384,14 @@ AppCtrl.start()
 
 
 
-document.getElementById('whatsapp-share').addEventListener('click', function() {
- ItemCtrl.getItem()
+// document.getElementById('whatsapp-share').addEventListener('click', function() {
+//  ItemCtrl.getItem()
 
 
 
   
-});
+// });
+
+
+AOS.init();
+
