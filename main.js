@@ -194,7 +194,7 @@ const UICtrl = (function () {
             setTimeout(() => {
                 alert.style.display = "none"
 
-            }, 3000);
+            }, 2000);
         },
         alertdanger: function (bg, bl, text, color) {
             document.querySelector(".alert").style.backgroundColor = bg
