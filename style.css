@@ -117,13 +117,28 @@ body {
 
 /* header ends */
 
+/* banner section starts */
+
+.banner{
+    /* background-image: url(./img/banner1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    margin-top: 60px;
+}
+.banner-wrapper{
+    /* height: 800px; */
+    /* width: 100vw; */
+
+}
 
 
  
  
   
   
-  
+/* banner section ends */
+
  
   
 
@@ -500,15 +515,21 @@ body {
 
 
 .list {
-    margin: 40px 0;
     display: none;
     padding: 0 15px;
+    margin: 40px 0;
+
 
 }
+.list>.container>div:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
 
-.list>.container>h1 {
+.list>.container>div:nth-child(1)>h1 {
     color: #f9c352;
-    margin: 40px 0;
 
 }
 
@@ -627,6 +648,40 @@ body {
     cursor: pointer;
 }
 
+
+
+
+
+
+#whatsapp-share{
+    background: linear-gradient(to bottom, #25D366, #1DAB57);
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 35px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 250px;
+
+    margin-right: 10px;
+  }
+  
+  #whatsapp-share:hover {
+    background-color: #1DAB57;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+  }
+  
+  #whatsapp-share:active {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
+  }
 
 
 
