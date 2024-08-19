@@ -87,9 +87,6 @@ const ItemCtrl = (function () {
 
 
 
-
-
-
         },
         removeItem: function (id) {
             // Find the index of the item to remove
@@ -224,7 +221,7 @@ const UICtrl = (function () {
             }
         },
         whatsappSection: function(data) {
-            let contactNumber = "9940302644"
+            let contactNumber = "919940302644"
             let combinedMessage = `Your Dream Bridal Look Awaits! :\n\nTotal:${data.totalMoney}\n\n`;
 
             data.items.forEach((el, index) => {
