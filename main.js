@@ -87,9 +87,6 @@ const ItemCtrl = (function () {
 
 
 
-
-
-
         },
         removeItem: function (id) {
             // Find the index of the item to remove
