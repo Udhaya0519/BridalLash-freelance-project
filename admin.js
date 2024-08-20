@@ -27,7 +27,7 @@ const AppCtrl = (function () {
 
                     var newElement = document.createElement("input");
                     newElement.className = "inputbox";
-
+                    newElement.placeholder = "Price"
                     // Make sure the container contains the oldElement
                     var container = oldElement.parentElement;
 
