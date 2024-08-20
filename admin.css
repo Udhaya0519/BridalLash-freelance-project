@@ -23,14 +23,13 @@ li {
 
 body {
     /* background-color: #2f2325; */
-    background-color: rgb(24, 24, 24);
+    background-color: #000000;
     /* font-family: "poppins", sans-serif; */
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     font-weight: 700;
-    /* color:; */
-    color: #00ff03;
+    /* color: #00ff03; */
 
 }
 
@@ -70,7 +69,7 @@ svg:hover {
 }
 
 .popup-wrapper>div:nth-child(1)>h3 {
-    color: #00ff03;
+    color: #f4010c;
 }
 
 .popup-wrapper>div:nth-child(1)>svg:nth-child(2) {
@@ -83,7 +82,7 @@ svg:hover {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    color: white;
+    color: #c2c5bc;
     font-weight: 400;
     padding: 0px 20px;
 }
@@ -93,7 +92,7 @@ svg:hover {
     border: none;
     padding: 8px 10px;
     background-color: rgb(51, 51, 51);
-    color: white;
+    color: #c2c5bc;
 }
 
 .popup-wrapper>form>input:focus {
@@ -102,8 +101,8 @@ svg:hover {
 
 .popup-wrapper>form>button {
     width: 95%;
-    background-color: #00ff03;
-    color: white;
+    background-color: #f4010c;
+    color: #c2c5bc;
     padding: 10px 8px;
     border: none;
     cursor: pointer;
@@ -127,11 +126,11 @@ svg:hover {
 }
 
 .box-wrapper>div {
-    border: 2px solid #00ff03;
+    border: 2px solid #f4010c;
     padding: 15px 30px;
     border-radius: 10px;
     font-weight: 700;
-    color: #fff;
+    color: #c2c5bc;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -142,9 +141,10 @@ svg:hover {
 .box-wrapper>div>img {
     border-radius: 5px;
 }
-
+/* #c2c5bc */
 .box-wrapper>div>h1 {
     font-weight: 500;
+  
 }
 
 .box-wrapper>div>div:nth-child(3) {
@@ -158,18 +158,19 @@ svg:hover {
 
 .box-wrapper>div>div:nth-child(4)>button {
     border: none;
-    background-color: #00ff03;
+    background-color: #f4010c;
     padding: 8px;
 }
 
 .box-wrapper>div>div:nth-child(4)>button>a {
-    color: #fff;
-
+    color: #c2c5bc;
 }
 
 .container>h1 {
     text-align: center;
     margin: 40px 0px;
+    color: #f4010c;
+
 }
 
 
@@ -216,5 +217,6 @@ svg:hover {
         width: 100%;
     }
 }
-
+/* #f4010c */
+/* #000000 */
 /* media query ends */
