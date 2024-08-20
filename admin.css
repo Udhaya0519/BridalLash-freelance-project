@@ -42,9 +42,35 @@ svg:hover {
     max-width: 1200px;
     margin: 0 auto;
 }
+.bridal-lash{
+  margin: 10px 0;
+}
 
+.bridal-lash-wrapper>span {
+    font-family: "Dancing Script", cursive;
+    font-size: 35px;
+    font-weight: 400;
+    color: #f9c352;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    height: 45px;
+    border-bottom: 4px solid #f9c352;
 
+}
 
+.bridal-lash-wrapper{
+      display: flex;
+      justify-content: space-between;
+      color: #f9c352;
+}
+
+.bridal-lash-wrapper>a:nth-child(2){
+    color: white;
+   cursor: pointer;
+}
+.bridal-lash-wrapper>a:nth-child(2):hover{
+    color: #f9c352;
+
+}
 
 /* popup start */
 .popup {
@@ -143,7 +169,6 @@ svg:hover {
 .box-wrapper>div>img {
     border-radius: 5px;
 }
-/* #c2c5bc */
 .box-wrapper>div>h1 {
     font-weight: 500;
   
@@ -208,7 +233,6 @@ svg:hover {
 }
 
 @media screen and (max-width:600px) {
-
 
     .docker {
         width: 85%;

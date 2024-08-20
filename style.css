@@ -56,7 +56,6 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     height: 45px;
     border-bottom: 4px solid #f9c352;
-    /* animation: slidedownY 1s ease-in-out forwards; */
 
 }
 
@@ -68,7 +67,6 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
-    /* animation: slidedownX 1s ease-in-out forwards; */
 
 
 }
