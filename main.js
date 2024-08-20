@@ -351,6 +351,8 @@ const AppCtrl = (function () {
                                 
             })
 
+
+            // event for Arrow
             document.querySelector(".arrow").addEventListener("click",()=>{
                 window.scrollTo({
                     top: 0,
@@ -358,7 +360,14 @@ const AppCtrl = (function () {
                     behavior: 'smooth'
                   });
             })
-    }
+
+        //  event for editIcon
+        document.querySelector(".box-wrapper").addEventListener("click",(e)=>{
+             console.log(e.target)
+        })
+
+
+        }
 
 
 
@@ -378,19 +387,12 @@ AppCtrl.start()
 
 
 
+console.log("fffe")
 
 
 
 
 
-
-// document.getElementById('whatsapp-share').addEventListener('click', function() {
-//  ItemCtrl.getItem()
-
-
-
-  
-// });
 
 
 AOS.init();
