@@ -361,10 +361,7 @@ const AppCtrl = (function () {
                   });
             })
 
-        //  event for editIcon
-        document.querySelector(".box-wrapper").addEventListener("click",(e)=>{
-             console.log(e.target)
-        })
+    
 
 
         }
