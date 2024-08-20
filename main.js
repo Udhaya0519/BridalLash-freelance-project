@@ -45,9 +45,72 @@ links.forEach((el) => {
 })
 
 
+function navigateToClientPage() {
+    const currentUrl = new URL(window.location.href);
 
-// Item Control
+    // Get the current URL parameters as a query string
+    const params = currentUrl.searchParams.toString();
 
+    // Construct the URL for the client page with the parameters
+    const clientUrl = `admin.html?${params}`;
+
+    // Navigate to the client page
+    window.location.href = clientUrl;
+}
+
+// Event for goClient button
+document.getElementById('adminlink').addEventListener('click', e => {
+    e.preventDefault();
+    navigateToClientPage();
+});
+
+//   workin code end
+
+function decrypt(encryptedText) {
+    return decodeURIComponent(atob(encryptedText)); // Base64 decoding and URI decoding
+}
+
+function populateFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // Decrypt the input and bridaltitle parameters
+    const encryptedInputs = urlParams.get('input');
+    const encryptedTitles = urlParams.get('bridaltitle');
+
+    if (encryptedInputs && encryptedTitles) {
+        const data1 = JSON.parse(decrypt(encryptedInputs));
+        const data2 = JSON.parse(decrypt(encryptedTitles));
+
+        data2.forEach((title, index) => {
+            const price = data1[index];
+
+            // Find all matching elements with the same title and update the price
+            document.querySelectorAll('#changeable').forEach(wrapper => {
+                wrapper.querySelectorAll('h3').forEach(h3 => {
+                    if (h3.innerText === title) {
+                        const priceElement = h3.parentElement.querySelector('.price');
+                        if (priceElement) {
+                            priceElement.innerText = price;
+                        } else {
+                            // Create the price element if it doesn't exist
+                            const newPriceElement = document.createElement('span');
+                            newPriceElement.className = 'price';
+                            newPriceElement.innerText = price;
+                            h3.parentElement.appendChild(newPriceElement);
+                        }
+                    }
+                });
+            });
+        });
+    } else {
+        console.log('No encrypted data found in URL.');
+    }
+}
+
+window.addEventListener('load', populateFromURL);
+
+
+// ItemCtrl
 const ItemCtrl = (function () {
     const item = function (id, img, title, price, quantity = 1) {
         this.id = id;
@@ -106,9 +169,8 @@ const ItemCtrl = (function () {
 
             if (data.items.length > 0) {
                 data.items.forEach((el) => {
-                    var toChange1 = el.price.split(",")
-                    var toChange2 = toChange1.join("")
-                    var price = parseInt(toChange2)
+                    var toChange1 = el.price
+                    var price = parseInt(toChange1)
                     money += price * el.quantity
 
 
@@ -220,32 +282,32 @@ const UICtrl = (function () {
                 document.querySelector(".list").style.display = "none"
             }
         },
-        whatsappSection: function(data) {
+        whatsappSection: function (data) {
             let contactNumber = "919940302644"
-            let combinedMessage = `Your Dream Bridal Look Awaits! :\n\nTotal:${data.totalMoney}\n\n`;
+            let combinedMessage = `Hello, I've just made an enquiry on your Bridal Lash Website \n\n`;
 
             data.items.forEach((el, index) => {
                 // Create the message for each item with numbering for clarity
-                console.log(el.img);
-                
-                const message = `${index + 1}) ${el.title}\n   Price: ${el.price}\n  Quantity: ${el.quantity}\n\n`;
-                
+
+                const message = `${index + 1}) ${el.title}\n   Price: ${el.price}\n  Quantity: ${el.quantity}\n\n Total:${data.totalMoney}`;
+
                 // Combine each message into one big message
                 combinedMessage += message;
             });
-            
+              
+            // Total:${data.totalMoney}\n\n
             // Encode the combined message and update the WhatsApp link
-   const url = `https://wa.me/${contactNumber}?text=${encodeURIComponent(combinedMessage)}`;
+            const url = `https://wa.me/${contactNumber}?text=${encodeURIComponent(combinedMessage)}`;
 
-            
+
             // Assuming there's an anchor tag with ID 'whatsapp-share' that triggers the WhatsApp sharing
             document.getElementById('whatsapp-share').href = url;
-            
+
         }
-        
-        
-        
-         
+
+
+
+
     }
 
 })()
@@ -346,25 +408,25 @@ const AppCtrl = (function () {
         })
 
         // event for whatsapp
-            document.querySelector("#whatsapp-share").addEventListener("click",()=>{
-                UICtrl.whatsappSection(ItemCtrl.getItem())
-                                
-            })
+        document.querySelector("#whatsapp-share").addEventListener("click", () => {
+            UICtrl.whatsappSection(ItemCtrl.getItem())
+
+        })
 
 
-            // event for Arrow
-            document.querySelector(".arrow").addEventListener("click",()=>{
-                window.scrollTo({
-                    top: 0,
-                    left: 0,
-                    behavior: 'smooth'
-                  });
-            })
-
-    
+        // event for Arrow
+        document.querySelector(".arrow").addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+        })
 
 
-        }
+
+
+    }
 
 
 
@@ -380,13 +442,6 @@ const AppCtrl = (function () {
 })()
 
 AppCtrl.start()
-
-
-
-
-console.log("fffe")
-
-
 
 
 
