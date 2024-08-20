@@ -44,10 +44,18 @@ const AppCtrl = (function () {
         boxWrapper.forEach((el) => {
             el.addEventListener("click", (e) => {
                 if (e.target.className === "save") {
-                    var oldElement = e.target.parentElement.parentElement.parentElement.children[2].children[0]
+                    var oldElement = e.target.parentElement.parentElement.parentElement.children[1].children[1].children[0]
+                      console.log(oldElement);
+                      
                     var value = oldElement.value
                     var newElement = document.createElement("span")
-                    newElement.innerText = value
+                    if(value.length >0){
+                        newElement.innerText = value  
+                    }else{
+                        newElement.innerText = 0
+                    }
+
+                    
                     var container = oldElement.parentElement;
                     container.replaceChild(newElement, oldElement);
                 }
