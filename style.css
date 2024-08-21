@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Libre+Baskerville&family=Open+Sans:ital,wght@0,300;0,400;1,300&family=Oswald&family=Playball&family=Playfair+Display&family=Poppins:wght@200;300;400&family=Roboto:wght@100&display=swap");
+
+
 * {
     margin: 0;
     padding: 0;
@@ -70,12 +73,14 @@ body {
 
 
 }
-.bridal-lash-wrapper>nav>li:nth-child(2)>a{
-  color: #f9c352 ;
+
+.bridal-lash-wrapper>nav>li:nth-child(2)>a {
+    color: #f9c352;
 
 }
-.bridal-lash-wrapper>nav>li:nth-child(2)>a:hover{
-  color: #ffffff;
+
+.bridal-lash-wrapper>nav>li:nth-child(2)>a:hover {
+    color: #ffffff;
 }
 
 .bridal-lash-wrapper>nav>li>a {
@@ -122,19 +127,19 @@ body {
 /* banner section starts */
 
 
- 
- 
-  
-  
+
+
+
+
 /* banner section ends */
 
- 
-  
 
 
 
-  
- 
+
+
+
+
 
 
 
@@ -154,8 +159,6 @@ body {
 .packages>.container>h1 {
     color: #f9c352;
     margin-bottom: 30px;
-    /* animation: slidedownX 1s ease-in-out forwards; */
-
 }
 
 .packages-wrapper {
@@ -172,8 +175,6 @@ body {
     border: 3px solid #4D3B3B;
     border-radius: 5px;
     padding: 10px;
-    /* animation: slidedownY 1s ease-in-out forwards; */
-
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
 
 
@@ -220,40 +221,11 @@ body {
     cursor: pointer;
 
 
-    /* position: relative; */
-    /* overflow: hidden; */
-    /* transition: color 0.7s ease; */
+
 
 
 }
 
-/* .packages-wrapper>div>button::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background-color: #D48A25; 
-    transition: width 0.7s ease;
-    z-index: 1;
-}
-.packages-wrapper>div>button:hover::before {
-    width: 100%;
-
-
-}
-
-
-
-
-.packages-wrapper>div>button::after{
-    content: 'ADD TO LIST';
-    position: relative;
-    z-index: 2;
-
-    color: #fff;
-} */
 
 
 
@@ -268,48 +240,57 @@ body {
 
 /* success alert */
 .alert {
-    background: #d4edda; /* Light green background for success */
+    background: #d4edda;
+    /* Light green background for success */
     padding: 20px 40px;
     border-radius: 4px;
-    border-left: 8px solid #28a745; /* Green border for success */
+    border-left: 8px solid #28a745;
+    /* Green border for success */
     display: none;
     justify-content: space-between;
-  margin-bottom: 20px;
-  width:50%;
-  animation: show_slide 1s ease forwards;
-  position: fixed; /* Use fixed or absolute to position relative to viewport */
-  top: 80px; /* Adjust as needed */
-  left: -10px;
-  z-index: 1000;
+    margin-bottom: 20px;
+    width: 50%;
+    animation: show_slide 1s ease forwards;
+    position: fixed;
+    /* Use fixed or absolute to position relative to viewport */
+    top: 80px;
+    /* Adjust as needed */
+    left: -10px;
+    z-index: 1000;
 }
-  .alert >div{
-     display: flex;
-       gap: 10px;
-    }
+
+.alert>div {
+    display: flex;
+    gap: 10px;
+}
 
 
-  .alert>div >svg:nth-child(1) ,.alert>div>div >svg:nth-child(1){
-    color: #28a745; /* Green color for success */
- cursor: pointer;  
+.alert>div>svg:nth-child(1),
+.alert>div>div>svg:nth-child(1) {
+    color: #28a745;
+    /* Green color for success */
+    cursor: pointer;
 }
-  
-  .msg {
+
+.msg {
     font-size: 18px;
-    color: #155724; /* Dark green text color for success */
-  }
+    color: #155724;
+    /* Dark green text color for success */
+}
 
 
 
- 
-  @keyframes show_slide {
-    0%{
-      transform: translateX(-100%);
+
+@keyframes show_slide {
+    0% {
+        transform: translateX(-100%);
     }
-    100%{
-      transform: translateX(100%);
+
+    100% {
+        transform: translateX(100%);
     }
-  }
-  
+}
+
 
 
 
@@ -339,7 +320,7 @@ body {
 .customize>.container>h1 {
     color: #f9c352;
     margin-bottom: 30px;
-    /* animation: slidedownY 1s ease-in-out forwards; */
+
 
 }
 
@@ -357,8 +338,6 @@ body {
     border: 3px solid #4D3B3B;
     border-radius: 5px;
     padding: 10px;
-    /* animation: slidedownY 1s ease-in-out forwards; */
-
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
 
 
@@ -404,40 +383,11 @@ body {
     cursor: pointer;
 
 
-    /* position: relative; */
-    /* overflow: hidden; */
-    /* transition: color 0.7s ease; */
+
 
 
 }
 
-/* .customize-wrapper>div>button::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background-color: #D48A25; /* Color filling */
-    /* transition: width 0.7s ease; */
-    /* z-index: 1; */
-/* } */
-/* .customize-wrapper>div>button:hover::before {
-    width: 100%;
-
-
-} */ */
-
-
-
-
-/* .customize-wrapper>div>button::after{
-    content: 'ADD TO LIST';
-    position: relative;
-    z-index: 2;
-
-    color: #fff;
-} */
 
 
 
@@ -510,7 +460,8 @@ body {
 
 
 }
-.list>.container>div:nth-child(1){
+
+.list>.container>div:nth-child(1) {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -633,7 +584,8 @@ body {
 
 
 
-.plus,.minus{
+.plus,
+.minus {
     cursor: pointer;
 }
 
@@ -642,7 +594,7 @@ body {
 
 
 
-#whatsapp-share{
+#whatsapp-share {
     background: linear-gradient(to bottom, #25D366, #1DAB57);
     color: #fff;
     border: none;
@@ -659,18 +611,18 @@ body {
     max-width: 250px;
 
     margin-right: 10px;
-  }
-  
-  #whatsapp-share:hover {
+}
+
+#whatsapp-share:hover {
     background-color: #1DAB57;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
-  }
-  
-  #whatsapp-share:active {
+}
+
+#whatsapp-share:active {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     transform: scale(0.95);
-  }
+}
 
 
 
@@ -681,100 +633,123 @@ body {
 
 
 /* contact start */
-.contact{
-    padding: 15px 15px;
+.contact {
+    padding: 30px 15px;
 }
 
-.contact-wrapper{
+.contact-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.contact-wrapper >div:nth-child(2){
+
+.contact-wrapper>div:nth-child(2) {
     display: flex;
     flex-direction: column;
     gap: 12px;
     align-items: center;
     color: #fff;
-   order: 3;
+    order: 3;
 }
-.contact-wrapper >div:nth-child(2)>p{
+
+.contact-wrapper>div:nth-child(2)>p {
     display: flex;
     flex-direction: column;
     gap: 5px;
     font-size: 14px;
 }
 
-.contact-wrapper >div:nth-child(2)>h1:nth-child(1),.contact-wrapper >div:nth-child(3)>h1:nth-child(1){
-  font-size: 24px;
-  font-weight: 400;
+.contact-wrapper>div:nth-child(2)>h1:nth-child(1),
+.contact-wrapper>div:nth-child(3)>h1:nth-child(1) {
+    font-size: 24px;
+    font-weight: 400;
 }
 
-.contact-wrapper >div:nth-child(3){
+.contact-wrapper>div:nth-child(3) {
     display: flex;
     flex-direction: column;
     align-items: center;
-  color: #fff;
-  gap: 7px;
-  order: 2;
+    color: #fff;
+    gap: 7px;
+    order: 2;
 }
 
-.contact-wrapper >div:nth-child(3)>div:nth-child(2){
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-  gap: 5px;
+.contact-wrapper>div:nth-child(3)>div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
 }
 
-.contact-wrapper >div:nth-child(3)>div:nth-child(2)>span{
+.contact-wrapper>div:nth-child(3)>div:nth-child(2)>span {
     display: flex;
     align-items: center;
     gap: 5px;
     font-size: 14px;
 }
-.contact-wrapper >div:nth-child(1)>span{
+
+.contact-wrapper>div:nth-child(1)>span {
     display: none;
 }
 
 /* contact end */
 
 /* arrow start */
-.arrow-wrapper{
-   text-align: right;
-   position: fixed;
+.arrow-wrapper {
+    text-align: right;
+    position: fixed;
     z-index: 1000;
     right: 20px;
     bottom: 25px;
- cursor: pointer;
+    cursor: pointer;
 }
-.arrow-wrapper >svg{
-      background-color: #ffffff;
-      width: 40px;
-      height: 40px;
-    border-radius: 50%;      
-  cursor: pointer;
+
+.arrow-wrapper>svg {
+    background-color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 /* arrow end */
 
 /* foot start */
-.foot{
+.foot {
     background-color: black;
     padding: 25px 15px;
 
 }
-.foot-wrapper{
-     display:flex;
-     flex-direction: column;
-     align-items: center;
-     color: #fff;
-     font-family: "poppins", sans-serif;  
-     gap: 10px;
-    }
+
+.foot-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    gap: 10px;
+}
+
+.foot-wrapper>span {
+    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+}
+
+.foot-wrapper>p {
+    font-size: 20px;
+    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.foot-wrapper>p>a {
+    font-weight: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    color: #F9C352;
+    font-weight: 700;
+}
 
 /* foot end */
 
-/* animation starts */
+/*animation starts */
 
 @keyframes slidedownY {
     0% {
@@ -803,7 +778,7 @@ body {
 
 
 
-/* animation ends */
+/* animation ends
 
 
 
@@ -845,7 +820,6 @@ body {
 
     .bridal-lash-wrapper>div {
         display: flex;
-        animation: slidedownY 1s ease-in-out forwards;
 
     }
 
@@ -901,23 +875,26 @@ body {
     .list {
         padding: 0 15px;
     }
+
     .list-wrapper>div>div:nth-child(2)>div:nth-child(1)>h4 {
         font-size: 12px;
     }
-    
+
     .list-wrapper>div>div:nth-child(2)>div:nth-child(1)>div>span {
         font-size: 12px;
     }
 
-    .contact-wrapper{
-     flex-direction: column;
-     gap: 25px;
+    .contact-wrapper {
+        flex-direction: column;
+        gap: 40px;
     }
-    .contact-wrapper >div:nth-child(1)>img{
-  display: none;
+
+    .contact-wrapper>div:nth-child(1)>img {
+        display: none;
     }
-    .contact-wrapper >div:nth-child(1)>span{
-     display: block;
+
+    .contact-wrapper>div:nth-child(1)>span {
+        display: block;
         font-family: "Dancing Script", cursive;
         font-size: 35px;
         font-weight: 400;
@@ -926,7 +903,7 @@ body {
         height: 45px;
         border-bottom: 4px solid #f9c352;
         animation: slidedownY 1s ease-in-out forwards;
-    
+
     }
 
 
@@ -989,24 +966,28 @@ body {
 
     .alert {
 
-  width: 80%;
-  animation: showslider 1s ease forwards;
-align-items: center;
+        width: 80%;
+        animation: showslider 1s ease forwards;
+        align-items: center;
     }
+
     .alert>div {
         align-items: center;
     }
-  .msg{
-    font-size: 12px;
-  }  
+
+    .msg {
+        font-size: 12px;
+    }
+
     @keyframes showslider {
-        0%{
-          transform: translateX(-80%);
+        0% {
+            transform: translateX(-80%);
         }
-        100%{
-          transform: translateX(25%);
+
+        100% {
+            transform: translateX(25%);
         }
-      }
+    }
 
 }
 

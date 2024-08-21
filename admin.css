@@ -85,7 +85,7 @@ svg:hover {
 
 /* popup start */
 .popup {
-    padding: 20px 0px;
+    padding: 30px 0px;
 }
 
 
@@ -106,7 +106,6 @@ svg:hover {
 }
 
 .popup-wrapper>div:nth-child(1)>h3 {
-    /* color: #f4010c; */
     color: #f9c352;
 }
 
@@ -263,9 +262,7 @@ svg:hover {
         gap: 50px;
     }
 
-    .box-wrapper>div {
-        /* width: 355px; */
-    }
+ 
 
     .docker {
         width: 355px;
