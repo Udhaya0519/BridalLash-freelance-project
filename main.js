@@ -425,6 +425,9 @@ const AppCtrl = (function () {
         })
 
 
+    
+
+
         // event for Arrow
         document.querySelector(".arrow").addEventListener("click", () => {
             window.scrollTo({
@@ -432,6 +435,7 @@ const AppCtrl = (function () {
                 left: 0,
                 behavior: 'smooth'
             });
+
         })
 
 
