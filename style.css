@@ -233,7 +233,8 @@ body {
 
 .packages-wrapper>div {
 
-    width: 30%;
+    /* width: 30%; */
+    width: 350px;
     background-color: #4D3B3B;
     border: 3px solid #4D3B3B;
     border-radius: 5px;
@@ -903,7 +904,7 @@ body {
     }
 
     .packages-wrapper>div {
-        width: 60%;
+        /* width: 60%; */
 
     }
 
@@ -975,7 +976,7 @@ body {
 
 @media screen and (max-width:600px) {
     .packages-wrapper>div {
-        width: 95%;
+        /* width: 95%; */
 
     }
 
@@ -1053,6 +1054,24 @@ body {
     .msg {
         font-size: 12px;
     }
+
+
+@media screen and (max-width:350px) {
+    .packages-wrapper>div{
+        width: 100%;
+    }
+    .contact-wrapper>div:nth-child(3)>div:nth-child(2)>span,
+    .contact-wrapper>div:nth-child(2)>p{
+        
+        font-size: 4vw;
+    }
+    .bridal-lash-wrapper>nav{
+        height: 400vh;
+    }
+    
+
+}
+
 
     @keyframes showslider {
         0% {
