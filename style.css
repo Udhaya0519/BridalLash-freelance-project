@@ -128,11 +128,6 @@ body {
 
 /* banner section starts */
 
-.banner{
-    padding-bottom: 45px;
-    background-color: #4D3B3B;
-
-}
 
 .banner-wrapper{
     background-image: url(./img/close-up-make-up-artist-applying-eyeshadow-woman-with-brush.jpg);
@@ -146,34 +141,41 @@ body {
     align-items: center;
     padding: 0 10px;
 
-    box-shadow: 0 0 30px #000;
+    opacity: 0.5;
+    position: relative;
 
 
     
 }
-.banner-wrapper>h1{
+.banner>.contain>h1{
     color: #fff;
     text-align: center;
     text-transform: uppercase;
     font-size: 80px;
     letter-spacing: 2px;
     text-shadow: 0 0 20px #000;
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    right: 10%;
+    bottom: 30%;
+
     
     
 }
-.banner-wrapper>h1>span{
+.banner>.contain>h1>span{
     display: block;
 }
 
 
 @media screen and (max-width:1000px){
-    .banner-wrapper>h1{
+    .banner>.contain>h1{
         font-size: 55px;
     }
 }
 
 @media screen and (max-width:700px){
-    .banner-wrapper>h1{
+    .banner>.contain>h1{
         font-size: 10vw;
         font-weight: 800;
     }
