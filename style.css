@@ -1068,7 +1068,10 @@ body {
     .bridal-lash-wrapper>nav{
         height: 400vh;
     }
-    
+    .list-wrapper>div>div:nth-child(2)>div:nth-child(2) {
+        flex-direction: column;
+        align-items: start;
+    }
 
 }
 
