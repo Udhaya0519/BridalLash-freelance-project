@@ -2,16 +2,16 @@ const menuBar = document.querySelector(".bridal-lash-wrapper >div:nth-child(3)")
 const ToSlideLeft = document.querySelector(".bridal-lash-wrapper>nav ")
 const links = document.querySelectorAll(".bridal-lash-wrapper>nav>li>a")
 const mediaQuery = window.matchMedia("(max-width:1200px)")
-let a = false
+let found = false
 function handleMediaQuery(e) {
     if (e.matches === true) {
         menuBar.addEventListener("click", () => {
-            a = !a
-            if (a === true) {
+            found = !found
+            if (found === true) {
                 ToSlideLeft.style.left = "-10%"
                 ToSlideLeft.style.transition = "0.7s"
 
-            } else if (a == false) {
+            } else if (found == false) {
                 ToSlideLeft.style.left = "-100%"
                 ToSlideLeft.style.transition = "1s"
             }
@@ -19,7 +19,7 @@ function handleMediaQuery(e) {
         })
         links.forEach((el) => {
             el.addEventListener("click", () => {
-                a = !a
+                found = !found
                 ToSlideLeft.style.left = "-100%"
                 ToSlideLeft.style.transition = "1s"
 
@@ -34,6 +34,7 @@ handleMediaQuery(mediaQuery)
 mediaQuery.addEventListener("change", handleMediaQuery)
 
 
+//  section navigate
 links.forEach((el) => {
     el.addEventListener("click", () => {
         document.querySelectorAll(".bridal-lash-wrapper>nav>li>a").forEach(el => el.style.color = "#ffffff")
@@ -45,69 +46,77 @@ links.forEach((el) => {
 })
 
 
-function navigateToClientPage() {
-    const currentUrl = new URL(window.location.href);
 
-    // Get the current URL parameters as a query string
-    const params = currentUrl.searchParams.toString();
 
-    // Construct the URL for the client page with the parameters
-    const clientUrl = `admin.html?${params}`;
 
-    // Navigate to the client page
-    window.location.href = clientUrl;
-}
-
-// Event for goClient button
-document.getElementById('adminlink').addEventListener('click', e => {
+document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
-    navigateToClientPage();
 });
 
-//   workin code end
 
-function decrypt(encryptedText) {
-    return decodeURIComponent(atob(encryptedText)); // Base64 decoding and URI decoding
-}
 
-function populateFromURL() {
-    const urlParams = new URLSearchParams(window.location.search);
 
-    // Decrypt the input and bridaltitle parameters
-    const encryptedInputs = urlParams.get('input');
-    const encryptedTitles = urlParams.get('bridaltitle');
 
-    if (encryptedInputs && encryptedTitles) {
-        const data1 = JSON.parse(decrypt(encryptedInputs));
-        const data2 = JSON.parse(decrypt(encryptedTitles));
 
-        data2.forEach((title, index) => {
-            const price = data1[index];
 
-            // Find all matching elements with the same title and update the price
-            document.querySelectorAll('#changeable').forEach(wrapper => {
-                wrapper.querySelectorAll('h3').forEach(h3 => {
-                    if (h3.innerText === title) {
-                        const priceElement = h3.parentElement.querySelector('.price');
-                        if (priceElement) {
-                            priceElement.innerText = price;
-                        } else {
-                            // Create the price element if it doesn't exist
-                            const newPriceElement = document.createElement('span');
-                            newPriceElement.className = 'price';
-                            newPriceElement.innerText = price;
-                            h3.parentElement.appendChild(newPriceElement);
-                        }
-                    }
-                });
-            });
-        });
-    } else {
-        console.log('No encrypted data found in URL.');
-    }
-}
 
-window.addEventListener('load', populateFromURL);
+window.onload =()=>{
+    let     parseditem = JSON.parse(localStorage.getItem("package"))   
+    var  changeable = document.querySelector("#changeable")
+console.log(parseditem);
+
+    let output =""
+    parseditem.forEach((el)=>{
+                    
+                 output+= 
+                 ` <div  data-aos="zoom-in-up"  data-aos-delay="100"  data-aos-duration="900">
+                                 <div>
+                                     <img width="100%" height="100%"  src=${el.img}   alt="high definition makeup package">
+                                 </div>
+                                 <h3>${el.title}</h3>
+                                 <div>
+                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25" fill="rgba(249,195,82,1)"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM13.5003 8C13.8278 8.43606 14.0625 8.94584 14.175 9.5H16V11H14.175C13.8275 12.7117 12.3142 14 10.5 14H10.3107L14.0303 17.7197L12.9697 18.7803L8 13.8107V12.5H10.5C11.4797 12.5 12.3131 11.8739 12.622 11H8V9.5H12.622C12.3131 8.62611 11.4797 8 10.5 8H8V6.5H16V8H13.5003Z"></path></svg>
+                                     <span  class="price">${el.price}</span>
+                                 </div>
+                                 <button class="addToList">ADD TO LIST</button>
+                                
+                             </div>`
+        
+
+           })    
+                   changeable.innerHTML = output  
+   
+        let  customize = JSON.parse(localStorage.getItem("customize"))   
+        let output1=''
+        var parsedItem2 = document.querySelector("#changeCustomize")
+        customize.forEach((el)=>{
+         
+         output1+= 
+         ` <div  data-aos="zoom-in-up"  data-aos-delay="100"  data-aos-duration="900">
+                         <div>
+                             <img width="100%" height="100%"  src=${el.img}   alt="high definition makeup package">
+                         </div>
+                         <h3>${el.title}</h3>
+                         <div>
+                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25" fill="rgba(249,195,82,1)"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM13.5003 8C13.8278 8.43606 14.0625 8.94584 14.175 9.5H16V11H14.175C13.8275 12.7117 12.3142 14 10.5 14H10.3107L14.0303 17.7197L12.9697 18.7803L8 13.8107V12.5H10.5C11.4797 12.5 12.3131 11.8739 12.622 11H8V9.5H12.622C12.3131 8.62611 11.4797 8 10.5 8H8V6.5H16V8H13.5003Z"></path></svg>
+                             <span  class="price">${el.price}</span>
+                         </div>
+                         <button class="addToList">ADD TO LIST</button>
+                        
+                     </div>`
+
+
+   })          
+   parsedItem2.innerHTML = output1  
+                    
+                }
+
+
+
+
+
+
+
 
 
 // ItemCtrl
@@ -288,19 +297,13 @@ const UICtrl = (function () {
 
             data.items.forEach((el, index) => {
                 // Create the message for each item with numbering for clarity
-
-                const message = `${index + 1}) ${el.title}\n   Price: ${el.price}\n  Quantity: ${el.quantity}\n\n Total:${data.totalMoney}`;
-
+                const message = `${index + 1})${el.title}\n   Price:${el.price}\n   Quantity:${el.quantity}\n\n`;
                 // Combine each message into one big message
                 combinedMessage += message;
             });
-              
-            // Total:${data.totalMoney}\n\n
+                      combinedMessage +=`Total:${data.totalMoney}\n\n`                          
             // Encode the combined message and update the WhatsApp link
             const url = `https://wa.me/${contactNumber}?text=${encodeURIComponent(combinedMessage)}`;
-
-
-            // Assuming there's an anchor tag with ID 'whatsapp-share' that triggers the WhatsApp sharing
             document.getElementById('whatsapp-share').href = url;
 
         }
@@ -448,4 +451,5 @@ AppCtrl.start()
 
 
 AOS.init();
+
 
