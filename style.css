@@ -37,7 +37,9 @@ body {
     position: fixed;
     top: 0;
     z-index: 1000;
-    background-color: #2f2325;
+    /* background-color: #2f2325; */
+    background-color: rgba(0, 0, 0, 0.37);
+
 
 }
 
@@ -126,12 +128,71 @@ body {
 
 /* banner section starts */
 
+.banner{
+    padding-bottom: 45px;
+    background-color: #4D3B3B;
+
+}
+
+.banner-wrapper{
+    background-image: url(./img/close-up-make-up-artist-applying-eyeshadow-woman-with-brush.jpg);
+    background-size: cover;    
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+
+    box-shadow: 0 0 30px #000;
+
+
+    
+}
+.banner-wrapper>h1{
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 80px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px #000;
+    
+    
+}
+.banner-wrapper>h1>span{
+    display: block;
+}
+
+
+@media screen and (max-width:1000px){
+    .banner-wrapper>h1{
+        font-size: 55px;
+    }
+}
+
+@media screen and (max-width:700px){
+    .banner-wrapper>h1{
+        font-size: 10vw;
+        font-weight: 800;
+    }
+}
 
 
 
 
-
+ 
+ 
+  
+  
 /* banner section ends */
+
+
+
+
+
+
 
 
 
@@ -806,7 +867,7 @@ body {
     .bridal-lash-wrapper>nav {
         position: absolute;
         flex-direction: column;
-        top: 0px;
+        top: -35%;
         left: -100%;
         width: 60%;
         align-items: center;
@@ -924,6 +985,17 @@ body {
 
     .products-wrapper>div {
         width: 90%;
+    }
+
+    .list>.container>div:nth-child(1){
+        flex-direction: column;
+        gap: 20px;
+        align-items: start;
+        margin-bottom: 10px;
+    }
+    #whatsapp-share{
+        padding: 5px 10px;
+        font-size: 12px;
     }
 
 
