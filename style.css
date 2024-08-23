@@ -48,7 +48,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    /* position: relative; */
 
 
 }
@@ -409,7 +409,8 @@ body {
 
 .customize-wrapper>div {
 
-    width: 30%;
+    /* width: 30%; */
+    width: 350px;
     background-color: #4D3B3B;
     border: 3px solid #4D3B3B;
     border-radius: 5px;
@@ -882,7 +883,7 @@ body {
     .bridal-lash-wrapper>nav {
         position: absolute;
         flex-direction: column;
-        top: -33%;
+        top: 0;
         left: -100%;
         width: 60%;
         align-items: center;
@@ -928,7 +929,7 @@ body {
     }
 
     .customize-wrapper>div {
-        width: 60%;
+        /* width: 60%; */
 
     }
 
@@ -994,7 +995,7 @@ body {
 
 
     .customize-wrapper>div {
-        width: 95%;
+        /* width: 95%; */
 
     }
 
@@ -1074,11 +1075,11 @@ body {
     }
     .contact-wrapper>div:nth-child(3)>div:nth-child(2)>span,
     .contact-wrapper>div:nth-child(2)>p{
-        
         font-size: 4vw;
     }
     .bridal-lash-wrapper>nav{
         height: 400vh;
+        width: 80%;
     }
     .list-wrapper>div>div:nth-child(2)>div:nth-child(2) {
         flex-direction: column;
