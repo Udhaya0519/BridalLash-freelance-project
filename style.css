@@ -988,17 +988,10 @@ body {
 }
 
 @media screen and (max-width:600px) {
-    .packages-wrapper>div {
-        /* width: 95%; */
-
-    }
 
 
-    .customize-wrapper>div {
-        /* width: 95%; */
 
-    }
-
+    
     .products-wrapper>div {
         width: 90%;
     }
@@ -1071,6 +1064,9 @@ body {
 
 @media screen and (max-width:350px) {
     .packages-wrapper>div{
+        width: 100%;
+    }
+    .customize-wrapper>div{
         width: 100%;
     }
     .contact-wrapper>div:nth-child(3)>div:nth-child(2)>span,
