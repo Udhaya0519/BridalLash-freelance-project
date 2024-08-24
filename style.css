@@ -234,6 +234,8 @@ body {
 .packages>.container>h1 {
     color: #f9c352;
     margin-bottom: 30px;
+    font-size: 30px;
+    letter-spacing: 1px;
 }
 
 .packages-wrapper {
@@ -396,6 +398,8 @@ body {
 .customize>.container>h1 {
     color: #f9c352;
     margin-bottom: 30px;
+    font-size: 30px;
+    letter-spacing: 1px;
 
 
 }
@@ -490,6 +494,8 @@ body {
 
 .products>.container>h1 {
     color: #f9c352;
+    font-size: 30px;
+    letter-spacing: 1px;
 }
 
 .products-wrapper {
@@ -909,28 +915,23 @@ body {
     .packages {
         padding-top: 55px;
     }
+    .packages>.container>h1,
+    .customize>.container>h1,
+    .products>.container>h1 {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    
 
     .packages-wrapper {
         flex-direction: column;
         align-items: center;
         gap: 40px;
     }
-
-    .packages-wrapper>div {
-        /* width: 60%; */
-
-    }
-
-
     .customize-wrapper {
         flex-direction: column;
         align-items: center;
         gap: 40px;
-    }
-
-    .customize-wrapper>div {
-        /* width: 60%; */
-
     }
 
 
@@ -990,7 +991,12 @@ body {
 @media screen and (max-width:600px) {
 
 
-
+    .packages>.container>h1,
+    .customize>.container>h1,
+    .products>.container>h1 {
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
     
     .products-wrapper>div {
         width: 90%;
