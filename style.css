@@ -48,7 +48,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
 
 
 }
@@ -869,7 +868,7 @@ body {
     .bridal-lash-wrapper>nav {
         position: absolute;
         flex-direction: column;
-        top: -35%;
+        top: 0;
         left: -100%;
         width: 60%;
         align-items: center;
