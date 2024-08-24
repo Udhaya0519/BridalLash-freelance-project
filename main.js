@@ -41,6 +41,8 @@ links.forEach((el) => {
     });
 });
 
+
+let contactNumber;
 function loadjson() {
     // Create a XHR Object
     const xhr = new XMLHttpRequest();
@@ -51,7 +53,9 @@ function loadjson() {
     xhr.onload = function () {
         if (this.status === 200) {
             const customer = JSON.parse(this.responseText);
-
+            let val = customer[2]
+            let contact = val[0].contact
+              contactNumber=contact.toString()
             var changeable = document.querySelector("#changeable");
 
             let output = "";
@@ -248,22 +252,24 @@ const UICtrl = (function () {
                 document.querySelector(".list").style.display = "none";
             }
         },
-        whatsappSection: function (data) {
-            let contactNumber = "919940302644";
-            let combinedMessage = `Hello, I've just made an enquiry on your Bridal Lash Website \n\n`;
-
-            data.items.forEach((el, index) => {
-                // Create the message for each item with numbering for clarity
-                const message = `${index + 1})${el.title}\n   Price:${el.price}\n   Quantity:${el.quantity}\n\n`;
-                // Combine each message into one big message
-                combinedMessage += message;
-            });
-            combinedMessage += `Total:${data.totalMoney}\n\n`;
-            // Encode the combined message and update the WhatsApp link
-            const url = `https://wa.me/${contactNumber}?text=${encodeURIComponent(combinedMessage)}`;
-            document.getElementById("whatsapp-share").href = url;
-        },
-    };
+        whatsappSection: function (data) {                   
+                 let combinedMessage = `Hello, I've just made an enquiry on your Bridal Lash Website \n\n`;
+     
+                 data.items.forEach((el, index) => {
+                     // Create the message for each item with numbering for clarity
+                     const message = `${index + 1})${el.title}\n   Price:${el.price}\n   Quantity:${el.quantity}\n\n`;
+                     // Combine each message into one big message
+                     combinedMessage += message;
+                 });
+                 combinedMessage += `Total:${data.totalMoney}\n\n`;
+                 // Encode the combined message and update the WhatsApp link
+                 const url = `https://wa.me/${contactNumber}?text=${encodeURIComponent(combinedMessage)}`;
+                 document.getElementById("whatsapp-share").href = url;
+            
+         }
+     };
+  
+         
 })();
 
 // App Control
@@ -402,4 +408,5 @@ const AppCtrl = (function () {
 AppCtrl.start();
 
 AOS.init();
+
 
