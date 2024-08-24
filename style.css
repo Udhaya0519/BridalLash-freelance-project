@@ -1081,6 +1081,9 @@ body {
         flex-direction: column;
         align-items: start;
     }
+    .docker{
+        overflow-x: hidden;
+    }
 
 }
 
