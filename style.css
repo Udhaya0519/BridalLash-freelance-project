@@ -37,7 +37,6 @@ body {
     position: fixed;
     top: 0;
     z-index: 1000;
-    /* background-color: #2f2325; */
     background-color: rgba(0, 0, 0, 0.37);
 
 
@@ -48,7 +47,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* position: relative; */
 
 
 }
@@ -220,7 +218,6 @@ body {
 
 .packages-wrapper>div {
 
-    /* width: 30%; */
     width: 350px;
     background-color: #4D3B3B;
     border: 3px solid #4D3B3B;
@@ -286,20 +283,16 @@ body {
 /* success alert */
 .alert {
     background: #d4edda;
-    /* Light green background for success */
     padding: 20px 40px;
     border-radius: 4px;
     border-left: 8px solid #28a745;
-    /* Green border for success */
     display: none;
     justify-content: space-between;
     margin-bottom: 20px;
     width: 50%;
     animation: show_slide 1s ease forwards;
     position: fixed;
-    /* Use fixed or absolute to position relative to viewport */
     top: 80px;
-    /* Adjust as needed */
     left: -10px;
     z-index: 1000;
 }
@@ -313,14 +306,12 @@ body {
 .alert>div>svg:nth-child(1),
 .alert>div>div>svg:nth-child(1) {
     color: #28a745;
-    /* Green color for success */
     cursor: pointer;
 }
 
 .msg {
     font-size: 18px;
     color: #155724;
-    /* Dark green text color for success */
 }
 
 
@@ -380,7 +371,6 @@ body {
 
 .customize-wrapper>div {
 
-    /* width: 30%; */
     width: 350px;
     background-color: #4D3B3B;
     border: 3px solid #4D3B3B;
@@ -435,17 +425,6 @@ body {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* customize section ends */
@@ -513,8 +492,6 @@ body {
     display: none;
     padding: 0 15px;
     margin: 40px 0;
-
-
 }
 
 .list>.container>div:nth-child(1) {
@@ -535,8 +512,6 @@ body {
     border-radius: 10px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-
-
 }
 
 .list-wrapper>div {
@@ -750,6 +725,7 @@ body {
 
 /* contact end */
 
+
 /* arrow start */
 .arrow-wrapper {
     text-align: right;
@@ -804,6 +780,7 @@ body {
 }
 
 /* foot end */
+
 
 
 /*animation starts */
