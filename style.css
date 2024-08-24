@@ -223,6 +223,8 @@ body {
 
 
 
+
+
 .packages {
     margin: 40px 0;
     padding: 0 15px;
@@ -527,6 +529,12 @@ body {
     align-content: center;
 }
 
+
+.packages>.container>h1,
+.customize>.container>h1,
+.products>.container>h1 {
+    margin-bottom: 60px;
+}
 
 /* products section ends */
 
